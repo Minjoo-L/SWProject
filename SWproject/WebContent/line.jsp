@@ -1,3 +1,5 @@
+<%@ page import="java.sql.*"%>
+<jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -117,52 +119,45 @@
 						<td><button type="button" class="btn2">#9호선</button></td>
 					</tr>
 				</table>
-                <div class="row">
-					<!-- DB에서 불러오기 -->
+				
+				<div class="row">
+				<%
+					int id, ref=0;
+					String name="", station="", img="";
+					Connection conn=null;
+					Statement stmt=null;
+					ResultSet rs=null;
 					
+					String sql="select * from attraction";
+					rs=DB.getResult(sql);
+					if(rs==null){
+						out.println("DB연동 오류");
+					}
+					while(rs.next()){
+						name=rs.getString("name");
+						station=rs.getString("station");
+						img=rs.getString("img");
+					%>
+					<!-- DB에서 불러오기 -->
 					<div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="grid center-block">
                             <figure class="effect-zoe">
-                                <img src="여긴 이미지 " class="img-responsive center-block">
+                                <img src="<%=img %> " class="img-responsive center-block" width="800px" height="400px">
                                 <figcaption>
-                                    <h2>여긴 데이터야 </h2>
+                                    <h2><%=name %> </h2>
                                     <p class="icon-links">
                                         <a href="#"><i class="fa fa-heart-o"></i></a>
                                         <a href="#"><i class="fa fa-eye"></i></a>
                                         <a href="#"><i class="fa fa-bookmark-o"></i></a>
                                     </p>
-                                    <p class="description">
-                                        여긴 역이야 
-                                    </p>
+                                    <p class="description"><%=station %></p>
                                 </figcaption>           
                             </figure>
                         </div>
                     </div>
-					<
-                    <!-- <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/paris.jpg" alt="paris" class="img-responsive center-block">
-                                <figcaption>
-                                    <h2><a href = "/place_details">Paris</a></h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-										<a href = "/place_details">
-                                       악 좀 돼라 좀
-										</a>
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div> -->
+					<% }%>
 				</div>
 			</div>
-                
-        <!-- /Portfolio -->
         <!-- Footer -->
         <footer>
             <div class="container">
