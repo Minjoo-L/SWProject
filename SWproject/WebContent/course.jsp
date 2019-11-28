@@ -48,12 +48,12 @@
                         <i class="fa fa-times"></i>
                     </a>
                 </li>
-                 <li class="sidebar-brand">
-                    <a href="/">Festival Metro</a>
+                <li class="sidebar-brand">
+                    <a href="main.jsp">Festival Metro</a>
                     <hr>
                 </li>
                 <li>
-                    <a href="index.jsp">Home</a>
+                    <a href="main.jsp">Home</a>
                 </li>
                 <li>
                     <a href="line.jsp">호선별 즐길거리</a>

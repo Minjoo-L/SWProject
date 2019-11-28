@@ -363,22 +363,22 @@ LinkedIn
                     <hr>
                 </li>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="main.jsp">Home</a>
                 </li>
                 <li>
-                    <a href="line">호선별 즐길거리</a>
+                    <a href="line.jsp">호선별 즐길거리</a>
                 </li>
                 <li>
-                    <a href="theme">테마별 즐길거리</a>
+                    <a href="theme.jsp">테마별 즐길거리</a>
                 </li>
                 <li>
-                    <a href="course">추천 코스</a>
+                    <a href="course.jsp">추천 코스</a>
                 </li>
 				<li>
-                    <a href="/message">쪽지보내기</a>
+                    <a href="message.jsp">쪽지보내기</a>
                 </li>
                 <li>
-                    <a href="contact">Contact</a>
+                    <a href="contact.jsp">Contact</a>
                 </li>
             </ul>
         </div>

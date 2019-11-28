@@ -19,40 +19,43 @@
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<style>
-	.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-</style>
+
+		<!-- 추가한부분-->
+		  <link rel="stylesheet" href="style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+     .box{
+        position:absolute;
+        top:0;left:0;bottom:0;right:0;
+        height:10%;
+        margin:15% auto;
+        text-align:center;
+    }
+	
+		
+    </style>
+		<!--endofUI예진-->
     </head>
 
     <body>
 
         <!-- Side Menu -->
-        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-        <div id="sidebar-wrapper">
+        <!--<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>-->
+        <div id="sidebar">
             <ul class="sidebar-nav">
-                <li>
+                <!--<li>
                     <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
                         <i class="fa fa-times"></i>
                     </a>
-                </li>
+                </li>-->
                 <li class="sidebar-brand">
                     <a href="main.jsp">Festival Metro</a>
                     <hr>
                 </li>
                 <li>
-                    <a href="main.jsp">Home</a>
+                    <a href="index.jsp">Home</a>
                 </li>
                 <li>
                     <a href="line.jsp">호선별 즐길거리</a>
@@ -73,66 +76,23 @@
         </div>
         <!-- /Side Menu -->
 
-        <!-- Contact Section -->
-        <div id="contact" class="container parallax">
-			<table width="100%">
-						<tr>
-							<td><p algn="left"><a href="/course"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/contact"><button type="button" class="btn1">next</button></a></p></td>
-						</tr>
-					</table>
-            <div class="col-md-4 col-md-offset-4 text-center">
-				
-                <h2 class="main-title">Send Messages</h2>
-                <hr>
-                <div class="divide50"></div>
+        <!-- Full Page Image Header Area -->
+        <div id="top" class="header">
+            <div class="vert-text parallax">
+			
+                <h1 class="header-text">Festival Metro</h1>
+                <h3 class="header-text">
+                    <em class="header-text">So we are here to guide your metro travel</em>
+                </h3><br />
+				<!--추가시작-->
+			
+
+				<br><br>
+				<!--추가끝-->
+                <!--<a href="#about" class="btn header-btn">Find Out More</a>-->
             </div>
-				
-            <!-- Contact Inner -->
-            <div class="inner contact">
-                <!-- Form Area -->
-                <div class="contact-form">
-                    <!-- Form -->
-                    <form id="contact-us" method="post" action="#">
-                        <!-- Left Inputs -->
-                        <div class="col-xs-6 col-xs-12 animated" data-animation="fadeInLeft" data-animation-delay="300">
-                            <!-- Name -->
-                            <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-                            <!-- Email -->
-                            <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
-                            <!-- Subject -->
-                            <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-                        </div><!-- End Left Inputs -->
-                        <!-- Right Inputs -->
-                        <div class="col-xs-6 col-xs-12 animated" data-animation="fadeInRight" data-animation-delay="400">
-                            <!-- Message -->
-                            <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
-                        </div><!-- End Right Inputs -->
-                        <!-- Bottom Submit -->
-                        <div class="relative fullwidth col-xs-12">
-                            <!-- Send Button -->
-                            <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button> 
-                        </div><!-- End Bottom Submit -->
-                        <!-- Clear -->
-                        <div class="clear"></div>
-                    </form>
-
-                    <!-- Your Mail Message -->
-                    <div class="mail-message-area">
-                        <!-- Message -->
-                        <div class="alert gray-bg mail-message not-visible-message">
-                            <strong>Thank You !</strong> Your email has been delivered.
-                        </div>
-                    </div>
-
-                </div><!-- End Contact Form Area -->
-            </div><!-- End Inner -->
-        </div><!-- End Contact Section -->
-        
-        <div class="map">
-            <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3618.727010735933!2d91.837871!3d24.907291700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1404919738144"></iframe>
         </div>
-        <!-- /Map -->
+        <!-- /Full Page Image Header Area -->
 
         <!-- Footer -->
         <footer>
@@ -192,6 +152,7 @@
                                     <option>U.S.A</option>
                                 </select>
                             </div>
+                            
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -224,6 +185,7 @@
         $(function() {
             $('a[href*=#]:not([href=#])').click(function() {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
@@ -240,6 +202,7 @@
         <!-- modal -->
 
         <script>
+
             $('.modal').on('shown.bs.modal', function () {
                 var curModal = this;
                 $('.modal').each(function(){
@@ -248,6 +211,7 @@
                     }
                 });
             });
+
         </script>
 
     </body>
