@@ -1,2 +1,3 @@
 SWproject/src/beans/
 SWproject/WebContent/WEB-INF/classes/
+SWproject/build/
