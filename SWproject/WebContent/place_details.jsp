@@ -164,14 +164,12 @@
 					 <div class="row">
 							<%
 					 	
-							//where조건을 이제는 게시글 id로 찾는걸로 바꾸기, review schema 수정 필요
-							//대충 불러오는 것만 확인한상태 
-							sql = "select * from review_test where score = '5'";
-							rs = DB.getResult(sql);
-							while (rs.next()){
-								score = rs.getString("score");
-								content = rs.getString("content");
-								time = rs.getString("time");
+							sql = "select * from review_test where posting_id="+id;
+					 		rs = DB.getResult(sql);
+					 		while (rs.next()){
+					 		score = rs.getString("score");
+					 		content = rs.getString("content");
+					 		time = rs.getString("time");
 							
 							%>
    
