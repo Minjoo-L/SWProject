@@ -162,12 +162,26 @@
 								  <h3 class="post-sub-heading">후기</h3>
 				<form method="post" action="#" id="form" role="form" >
 					 <div class="row">
+							<%
+					 	
+							//where조건을 이제는 게시글 id로 찾는걸로 바꾸기, review schema 수정 필요
+							//대충 불러오는 것만 확인한상태 
+							sql = "select * from review_test where score = '5'";
+							rs = DB.getResult(sql);
+							while (rs.next()){
+								score = rs.getString("score");
+								content = rs.getString("content");
+								time = rs.getString("time");
+							
+							%>
+   
 						<!-- 	 for (let data of results){ -->
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 										<div class=" from-group col-md-12" >
-											<p>꼬 </p>
-											<h5> - 꾸</h5>
+												<p>평점 &nbsp <%=score %></p>
+												<p><%=content %> </p>
+												<h5> - 이름 &nbsp [<%=time%>]</h5>
 										</div>
 								</div>
 						<!-- } -->	
@@ -177,36 +191,33 @@
 						</div>
 								  <div class="post-comments-form">
 									  <h3 class="post-sub-heading">후기 작성</h3>
-									  
-									  <form method="post" action="/theme/place_details" id="form" role="form" >
-										  <div class="row">
-											  <div class="col-md-6 form-group">
-												  <h3> 평점
-												  <select name="sortMtd" title="평점" class="optSelect2" onchange="$('#sortMethod').val(this.value);fnChgEvalMove(1)">
-													  <option value="ne">5</option>
-													  <option value="ne">4</option>
-													  <option value="ne">3</option>
-													  <option value="ne">2</option>
-													  <option value="ne">1</option>
-												  </select>
-												  </h3>
-											  </div>
-											  <!-- Comment -->
-											  <div class="form-group col-md-12">
-												  <textarea name="review" id="review" class=" form-control" rows="6" placeholder="Comment" maxlength="400"></textarea>
-											  </div>
-
-											  <!-- Send Button -->
-											  <div class="form-group col-md-12">
-												  <button type="submit" class="btn btn-main ">
-													  완료
-												  </button>
-											  </div>
-
-
-										  </div>
-
-									  </form>
+									  <form method="post" action="reviewAction.jsp" id="form" role="form" >
+											<div class="row">
+												<div class="col-md-6 form-group">
+													<h3> 평점
+													<select name="sortMtd" title="평점" class="optSelect2" onchange="$('#sortMethod').val(this.value);fnChgEvalMove(1)">
+														<option value="5">5</option>
+														<option value="4">4</option>
+														<option value="3">3</option>
+														<option value="2">2</option>
+														<option value="1">1</option>
+													</select>
+													</h3>
+												</div>
+												<!-- Comment -->
+												<div class="form-group col-md-12">
+													<textarea name="review" id="review" class=" form-control" rows="6" placeholder="Comment" maxlength="400"></textarea>
+												</div>
+  
+												<!-- Send Button -->
+												<div class="form-group col-md-12">
+													<input type = "hidden" name = "id" value="<%=id%>">
+													<button type="submit" class="btn btn-main ">
+														완료
+													</button>
+												</div>
+											</div>
+										</form>
 								  </div>
 
 
