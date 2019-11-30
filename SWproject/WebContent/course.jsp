@@ -1,5 +1,3 @@
-<%@ page import = "java.sql.*" %>
-<jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -76,8 +74,8 @@
         </div>
         <!-- /Side Menu -->
 
-       <!-- Portfolio -->
-       <div id="places" class="places">
+        <!-- Portfolio -->
+        <div id="places" class="places">
             <div class="container">
 				<table width="100%">
 						<tr>
@@ -94,45 +92,208 @@
             </div>  
             <div class="divide50">
 			</div>  
-			
             <div class="container">
-					 <div class="row">
-					<% while (rs.next()){
-				 		c_name = rs.getString(1);
-				 		c_theme = rs.getString(2);
-				 		firplace_name = rs.getString(3);
-				 		secplace_name = rs.getString(4);
-				 		thrplace_name = rs.getString(5);
-				 		forplace_name = rs.getString(6);
-				 		id = rs.getInt(7);
-				 	%>
+                <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="grid center-block">
                             <figure class="effect-zoe">
                                 <img src="img/paris.jpg" alt="paris" class="img-responsive center-block">
                                 <figcaption>
-
+                                    <h2><a href = "place_details.jsp">1st 추천코스</a></h2>
                                     <p class="icon-links">
                                         <a href="#"><i class="fa fa-heart-o"></i></a>
                                         <a href="#"><i class="fa fa-eye"></i></a>
                                         <a href="#"><i class="fa fa-bookmark-o"></i></a>
                                     </p>
                                     <p class="description">
-				<a href="place_details.jsp?id=<%=id%>">
-                                       		<%=forplace_name %>
+										<a href = "/place_details">
+                                       아아아아아ㅏ우우ㅏ우ㅏ아아
 										</a>
                                     </p>
                                 </figcaption>           
                             </figure>
                         </div>
                     </div>
-                   <% 
-                   	i++;
-					} 
-					rs.close();%>
-                   </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="grid center-block">
+                            <figure class="effect-zoe">
+                                <img src="img/sydney.jpg" alt="sydney" class="img-responsive center-block">
+                                <figcaption>
+                                    <h2>Sydney</h2>
+                                    <p class="icon-links">
+                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        <a href="#"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
+                                    </p>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
+                                    </p>
+                                </figcaption>           
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class= "row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="grid center-block">
+                            <figure class="effect-zoe">
+                                <img src="img/washington.jpg" alt="washington" class="img-responsive center-block">
+                                <figcaption>
+                                    <h2>Washington</h2>
+                                    <p class="icon-links">
+                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        <a href="#"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
+                                    </p>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
+                                    </p>
+                                </figcaption>           
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="grid center-block">
+                            <figure class="effect-zoe">
+                                <img src="img/london.jpg" alt="london" class="img-responsive center-block">
+                                <figcaption>
+                                    <h2>London</h2>
+                                    <p class="icon-links">
+                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        <a href="#"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
+                                    </p>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
+                                    </p>
+                                </figcaption>           
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="grid center-block">
+                            <figure class="effect-zoe">
+                                <img src="img/statue_of_liberty.jpg" alt="statue_of_liberty" class="img-responsive center-block">
+                                <figcaption>
+                                    <h2>U.S.A</h2>
+                                    <p class="icon-links">
+                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        <a href="#"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
+                                    </p>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
+                                    </p>
+                                </figcaption>           
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="grid center-block">
+                            <figure class="effect-zoe">
+                                <img src="img/pizza_tower.jpg" alt="pizza_tower" class="img-responsive center-block">
+                                <figcaption>
+                                    <h2>Pizza Tower</h2>
+                                    <p class="icon-links">
+                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        <a href="#"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
+                                    </p>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
+                                    </p>
+                                </figcaption>           
+                            </figure>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- /Portfolio -->
+
+        <!-- Call to Action -->
+        <div class="call-to-action">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h3>We provide online booking</h3>
+                        <a href="#" class="btn booking-btn text-center" data-toggle="modal" data-target="#booking">Click for Booking !</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Call to Action -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <ul class="list-inline">
+                            <li>
+                                <i class="fa fa-facebook"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-twitter"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-dribbble"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-pinterest"></i>
+                            </li>
+                        </ul>
+                        <hr>
+                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
+                        <div class="top-scroll">
+                            <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+
+        <!-- begin:booking -->
+        <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Online Booking Form</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="emailAddress">Email address</label>
+                                <input id="emailAddress" type="email" class="form-control input-lg" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" class="form-control input-lg" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Which country do you want to travel?</label>
+                                <select class="form-control" id="country">
+                                    <option>Australia</option>
+                                    <option>Bangladesh</option>
+                                    <option>England</option>
+                                    <option>France</option>
+                                    <option>U.S.A</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn confirm-btn" value="Confirm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end:booking -->
 
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
