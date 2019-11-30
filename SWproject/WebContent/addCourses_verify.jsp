@@ -29,8 +29,19 @@
 		System.out.println(fp4);
 		String aNull=null;
 		Boolean value;
+		int count=1;
 		
-		String sqlI="insert into courses values ('"+gname+"','"+gtheme+"','"+fp1+"','"+fp2+"','"+fp3+"','"+fp4+"')";
+		String sql2="select * from courses";
+		rs=DB.getResult(sql2);
+		
+		while(rs.next()){
+			count=count+1;
+		}
+		
+		System.out.println(count);
+		
+		
+		String sqlI="insert into courses values ('"+gname+"','"+gtheme+"','"+fp1+"','"+fp2+"','"+fp3+"','"+fp4+"','"+count+"')";
 		value = DB.excuteUpdateRB(sqlI);
 		
 		if(value)
