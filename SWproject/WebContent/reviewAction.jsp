@@ -11,16 +11,24 @@
 </head>
 <body>
 <%
+	String user_id = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
+	if(user_id == null){
+		%>
+		<script>
+		alert('로그인을 해주세요 '); 
+		location.href='login.jsp';
+		</script>
+		 <% 
+	}
+	else{
 	//place_details에서 보내온 변수 저장 
 	ResultSet rs=null;
     PreparedStatement pstmt = null;
-	//JavaBeans Review = new JavaBeans();
 	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw","","");
 	request.setCharacterEncoding("UTF-8");
 	String content = request.getParameter("review");			//리뷰 내용
 	String score = request.getParameter("sortMtd");
 	String posting_title = request.getParameter("c_name");
-	String user_id = request.getParameter("user_id");
 	int id = Integer.parseInt(request.getParameter("id"));
 	System.out.println("id는"+id);
 	System.out.println("user id는"+user_id);
@@ -63,6 +71,7 @@
 	alert('저장되었습니다'); 
 	location.href='place_details.jsp?id=<%=id%>';
 </script>
-<%} %>
+<%}
+} %>
 </body>
 </html>

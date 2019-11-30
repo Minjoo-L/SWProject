@@ -127,7 +127,6 @@
 			 request.setCharacterEncoding("utf-8");
 			 String score ="", content ="", time ="", user_id="";
 			 int id = Integer.parseInt(request.getParameter("id"));
-			 String user = "mynametest";
 			 String c_name="", c_theme ="", firplace_name="", secplace_name="", thrplace_name="",forplace_name="";
 			 System.out.println("id는 "+id);
 			 String sql = "select * from courses where id ="+id;
@@ -247,7 +246,6 @@
 											 <div class="form-group col-md-12">
 													<input type = "hidden" name = "id" value="<%=id %>">
 													<input type="hidden" name = "c_name" value ="<%= c_name %>">
-													<input type="hidden" name="user_id" value = "<%= user %>">
 													<button type="submit" class="btn btn-main ">
 														완료
 													</button>
