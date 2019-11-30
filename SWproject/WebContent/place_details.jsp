@@ -87,41 +87,58 @@
 	</style>
 	</head>
 	<body id ="body">
-	 <!-- Side Menu -->
-        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li>
-                    <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="main.jsp">Festival Metro</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="main.jsp">Home</a>
-                </li>
-                <li>
-                    <a href="line.jsp">호선별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="theme.jsp">테마별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="course.jsp">추천 코스</a>
-                </li>
-				<li>
-                    <a href="message.jsp">쪽지보내기</a>
-                </li>
+		<%
+        String user_id = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
+        System.out.println("유저 아이디" + user_id);
+      %>
+    <!-- Side Menu -->
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+    
+    <div id="sidebar">
+    
+        <ul class="sidebar-nav">
+            <!--<li>
+                <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
+                    <i class="fa fa-times"></i>
+                </a>
+            </li>-->
+            <li class="sidebar-brand">
+                <a href="main.jsp">Festival Metro</a>
+                <hr>
+            </li>
+            <li>
+                <a href="index.jsp">Home</a>
+            </li>
+            <li>
+                <a href="line.jsp">호선별 즐길거리</a>
+            </li>
+            <li>
+                <a href="theme.jsp">테마별 즐길거리</a>
+            </li>
+            <li>
+                <a href="course.jsp">추천 코스</a>
+            </li>
+            <li>
+                <a href="message.jsp">쪽지보내기</a>
+            </li>
+            <% if("admin".equals(user_id) && user_id != null){
+                System.out.println(user_id); %>
+            <li>
+                <a href="addCourses.jsp">코스 추가 </a>
+            </li>
+            <li>
+                <a href="deleteReview.jsp">후기 삭제  </a>
+            </li>
+            <%
+                }else{
+                %>
                 <li>
                     <a href="contact.jsp">Contact</a>
                 </li>
-            </ul>
-        </div>
-        <!-- /Side Menu -->
-	
+                <%} %>
+        </ul>
+    </div>
+	<!--/side menu-->
 			<%
 			ResultSet rs=null;
 			 request.setCharacterEncoding("utf-8");
