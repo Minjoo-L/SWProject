@@ -27,9 +27,10 @@
 	Timestamp time = new Timestamp(System.currentTimeMillis());
 
 	//후기 작성했는지 확인 
-	String SQL = "select * from review_test where user_id = ?";
+	String SQL = "select * from review_test where user_id = ? and posting_title = ?";
 	pstmt = conn.prepareStatement(SQL);
 	pstmt.setString(1, user_id);
+	pstmt.setString(2, posting_title);
 	rs = pstmt.executeQuery();
 	if(rs.isBeforeFirst()){
 		System.out.println("조회된데이 있 ");
