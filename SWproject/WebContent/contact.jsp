@@ -50,11 +50,11 @@
     <div id="sidebar">
     
         <ul class="sidebar-nav">
-            <!--<li>
+            <<li>
                 <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
                     <i class="fa fa-times"></i>
                 </a>
-            </li>-->
+            </li>
             <li class="sidebar-brand">
                 <a href="main.jsp">Festival Metro</a>
                 <hr>
