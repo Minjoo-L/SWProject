@@ -99,7 +99,7 @@
                             <figure class="effect-zoe">
                                 <img src="img/paris.jpg" alt="paris" class="img-responsive center-block">
                                 <figcaption>
-                                    <h2><a href = "/place_details">Paris</a></h2>
+                                    <h2><a href = "place_details.jsp">1st 추천코스</a></h2>
                                     <p class="icon-links">
                                         <a href="#"><i class="fa fa-heart-o"></i></a>
                                         <a href="#"><i class="fa fa-eye"></i></a>

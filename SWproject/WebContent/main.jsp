@@ -33,6 +33,19 @@
         margin:15% auto;
         text-align:center;
     }
+    .btn1{
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius:10px;
+  width:30px;
+  height:38px;
+	}
 	
 		
     </style>
@@ -85,8 +98,20 @@
                     <em class="header-text">So we are here to guide your metro travel</em>
                 </h3><br />
 				<!--추가시작-->
-			
-
+				
+				<%//세션에서 id와 nickname가져옴
+				String session_id=(String)session.getAttribute("user_id");
+				
+				%>
+				<% if(session_id!=null){%>
+				<big><b><%=session_id %></b></big> 님 환영합니다.
+				<br><a href="logout.jsp">로그아웃</a>
+				<%} else {%>
+				 <p>로그인을 해주세요.</p>
+    			<a href="login.jsp">로그인</a>
+    			<a href="join.jsp">회원가입</a>
+    			<%}
+    			%>
 				<br><br>
 				<!--추가끝-->
                 <!--<a href="#about" class="btn header-btn">Find Out More</a>-->

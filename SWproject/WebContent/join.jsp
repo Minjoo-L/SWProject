@@ -1,3 +1,5 @@
+<%@ page import="java.sql.*"%>
+<jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -125,19 +127,37 @@ input[type="submit"]{
 							<hr>
                         </div>		
 	<div class="box">	
-     <form action="/join" method="post">
-        <div class="box">
+     <form action="join.jsp" method="post">
+       
         아이디  &nbsp<input type="text" name="user_id"><br/>
         비밀번호  &nbsp<input type="password" name="user_pwd"><br/>
         닉네임  &nbsp<input type="text" name="user_nickname"><br/><br>
         <input type="submit" value="회원가입">
-    </div>
-    </form>
-   
-	</div>	
     
     </form>
-
+   <%
+   					//form으로부터 값 받아오기
+					String user_id=request.getParameter("user_id");
+					String user_pwd=request.getParameter("user_pwd");
+					String user_nickname=request.getParameter("user_nickname");
+					boolean value=false;
+					
+					Connection conn=null;
+					Statement stmt=null;
+					ResultSet rs=null;
+					
+					String sql="insert into users values ('"+user_id+"','"+user_pwd+"','"+user_nickname+"')";
+					value=DB.excuteUpdateRB(sql);
+					
+					if(value)
+						{
+						response.sendRedirect("login.jsp");
+						}
+						
+				
+	%>				
+	</div>	
+    
                         
                       </div>
                       <!-- /.row --> 

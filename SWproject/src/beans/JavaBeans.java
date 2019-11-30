@@ -12,14 +12,15 @@ public class JavaBeans {
 	{
 		try{
 	   	       Class.forName("com.mysql.jdbc.Driver");
-			   conn=DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw","user1","1234");
+			   conn=DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw?useUnicode=true&characterEncoding=UTF-8","","");
 	   	       stmt = conn.createStatement();    
 	        }
 	       catch(Exception e)
 		   {
-	   	    System.out.println("DB 연동 오류입니다. : " + e.getMessage());
+	   	    System.out.println("DB 연동 오류입니다.: " + e.getMessage());
 	       }
 	}
+	
 	
 	
 	public ResultSet getResult(String sql) //sql문을 싱행하여 Resultset을 반환
@@ -44,6 +45,18 @@ public class JavaBeans {
 		} catch (Exception e) {
 			
 			System.out.println("DB 연동 오류입니다. : " + e.getMessage());
+		}
+		
+	}
+	//update를 하고 bool형을 리턴해주는 함수
+	public boolean excuteUpdateRB(String sql) //insert-db에서 데이터베이스에 데이터를 삽입하는 함수.
+	{	
+		try {
+			stmt.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {
+			System.out.println("DB 연동 오류입니다. : " + e.getMessage());
+			return false;
 		}
 		
 	}
