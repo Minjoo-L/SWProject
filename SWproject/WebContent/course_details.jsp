@@ -40,53 +40,7 @@
     </head>
 
     <body>
-    <%
-		ResultSet rs =null;
-    	ResultSet m = null;
-		int i = 0;
-	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="",thrplace_name="", forplace_name="";
-	 	int id = 0;
-	 	request.setCharacterEncoding("utf-8");
-	 	//where조건을 이제는 게시글 제목으로 찾는걸로 바꾸기 
-	 	String sql = "select firplace_name, secplace_name, thrplace_name, forplace_name from courses where id=6";
-	 	rs = DB.getResult(sql);
-	 	String[][] item = new String[4][13];
-	%>
-
-        <!-- Side Menu -->
-        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li>
-                    <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="main.jsp">Festival Metro</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="main.jsp">Home</a>
-                </li>
-                <li>
-                    <a href="line.jsp">호선별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="theme.jsp">테마별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="course.jsp">추천 코스</a>
-                </li>
-				<li>
-                    <a href="message.jsp">쪽지보내기</a>
-                </li>
-                <li>
-                    <a href="contact.jsp">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /Side Menu -->
+        <%@ include file = "sidemenubar.jsp" %>
 
         <!-- Portfolio -->
         <div id="places" class="places">
