@@ -8,8 +8,8 @@
 
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-					<meta name="description" content="">
-				<meta name="author" content="">
+			<meta name="description" content="">
+			<meta name="author" content="">
 
 				<title>자세한 내용입니다</title>
 
@@ -87,12 +87,13 @@
 	</style>
 	</head>
 	<body id ="body">
+	  <%@ include file = "sidemenubar.jsp" %>
+	
 			<%
 			ResultSet rs=null;
 			 request.setCharacterEncoding("utf-8");
 			 String score ="", content ="", time ="", user_id="";
 			 int id = Integer.parseInt(request.getParameter("id"));
-			 String user = "mynametest";
 			 String c_name="", c_theme ="", firplace_name="", secplace_name="", thrplace_name="",forplace_name="";
 			 System.out.println("id는 "+id);
 			 String sql = "select * from courses where id ="+id;
@@ -109,6 +110,7 @@
 					 }
 				 
 		%>
+		
 		<section class="page-title bg-2">
 			<div class="container">
 			  <div class="row">
@@ -170,6 +172,9 @@
 									score = rs.getString("score");
 									content = rs.getString("content");
 									time = rs.getString("time");
+									
+									String date = time.substring(0,10);
+									String tt = time.substring(11,19);
 							%>
 						<!-- 	 for (let data of results){ -->
 								<div class="col-md-6 form-group">
@@ -177,8 +182,7 @@
 										<div class=" from-group col-md-12" >
 												<p>평점:  &nbsp <%=score %></p>
 												<p>내용: <%=content %> </p>
-												<p>날짜: <%=time%></p>
-												<h5> - 작성자  &nbsp <%=user_id%> </h5>
+												<h5>작성자:  &nbsp <%=user_id%> &nbsp[<%=date%> / <%=tt %>] </h5>
 												<hr width = "100%">
 										</div>
 								</div>
@@ -210,7 +214,6 @@
 											 <div class="form-group col-md-12">
 													<input type = "hidden" name = "id" value="<%=id %>">
 													<input type="hidden" name = "c_name" value ="<%= c_name %>">
-													<input type="hidden" name="user_id" value = "<%= user %>">
 													<button type="submit" class="btn btn-main ">
 														완료
 													</button>
@@ -229,5 +232,54 @@
 					  </div>
 				  </div>
 			  </section>
-		</body>
-		</html>
+		 <!-- JavaScript -->
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+
+        <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+        <script>
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        </script>
+        <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        </script>
+        <script>
+        $(function() {
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+        </script>
+
+        <!-- modal -->
+
+        <script>
+            $('.modal').on('shown.bs.modal', function () {
+                var curModal = this;
+                $('.modal').each(function(){
+                    if(this != curModal){
+                        $(this).modal('hide');
+                    }
+                });
+            });
+        </script>
+
+    </body>
+</html>
+
