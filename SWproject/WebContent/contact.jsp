@@ -38,41 +38,7 @@
 
     <body>
 
-        <!-- Side Menu -->
-        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li>
-                    <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="main.jsp">Festival Metro</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="main.jsp">Home</a>
-                </li>
-                <li>
-                    <a href="line.jsp">호선별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="theme.jsp">테마별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="course.jsp">추천 코스</a>
-                </li>
-				<li>
-                    <a href="message.jsp">쪽지보내기</a>
-                </li>
-                <li>
-                    <a href="contact.jsp">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /Side Menu -->
-
+        <%@ include file = "sidemenubar.jsp" %>
         <!-- Contact Section -->
         <div id="contact" class="container parallax">
 			<table width="100%">

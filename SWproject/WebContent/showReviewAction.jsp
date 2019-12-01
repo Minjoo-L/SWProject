@@ -96,7 +96,7 @@
 	</style>
 	</head>
 		<body id ="body">
-		
+				
 	<%
 		ResultSet rs=null;
  		request.setCharacterEncoding("utf-8");
