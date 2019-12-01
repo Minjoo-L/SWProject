@@ -1,3 +1,5 @@
+<%@ page import="java.sql.*" %>
+<jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -48,54 +50,19 @@
     </head>
 
     <body>
-
-        <!-- Side Menu -->
-        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li>
-                    <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="main.jsp">Festival Metro</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="main.jsp">Home</a>
-                </li>
-                <li>
-                    <a href="line.jsp">호선별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="theme.jsp">테마별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="course.jsp">추천 코스</a>
-                </li>
-				<li>
-                    <a href="message.jsp">쪽지보내기</a>
-                </li>
-                <li>
-                    <a href="contact.jsp">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /Side Menu -->
-
+       <%@ include file = "sidemenubar.jsp" %>
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
 				<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/line"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/course"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p algn="left"><a href="/"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="/theme"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 					</table>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 text-center">
-                        <h2 class="main-title">Our visited place</h2>
+                        <h2 class="main-title">테마별 즐길거리</h2>
                         <hr>
                     </div>
                 </div>
@@ -104,172 +71,71 @@
             <div class="container">
 				<table width = "100%">
 					<tr>
-						<td><button type="button" class="btn2">#1호선</button></td>
-						<td><button type="button" class="btn2">#2호선</button></td>
-						<td><button type="button" class="btn2">#3호선</button></td>
-						<td><button type="button" class="btn2">#4호선</button></td>
-						<td><button type="button" class="btn2">#5호선</button></td>
-						<td><button type="button" class="btn2">#6호선</button></td>
-						<td><button type="button" class="btn2">#7호선</button></td>
-						<td><button type="button" class="btn2">#8호선</button></td>
-						<td><button type="button" class="btn2">#9호선</button></td>
+						<td><button type="button" class="btn2" onclick="location.href='line.jsp'">전체</button></td>	
+						<% 
+						String[] theme_arr=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
+						for(int i=0;i<9;i++){ %>
+						<td><button type="button" class="btn2" onclick="location.href='theme.jsp?id=<%=i%>'"><%=theme_arr[i]%></button></td>
+						<%}%>				
 					</tr>
 				</table>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/paris.jpg" alt="paris" class="img-responsive center-block">
-                                <figcaption>
-                                      <h2><a href = "/place_details">Paris</a></h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-                                        <a href = "/place_details">
-                                                우아아아ㅏㅏ아아ㅏㅏ아아
-                                        </a>
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/sydney.jpg" alt="sydney" class="img-responsive center-block">
-                                <figcaption>
-                                    <h2>Sydney</h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class= "row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/washington.jpg" alt="washington" class="img-responsive center-block">
-                                <figcaption>
-                                    <h2>Washington</h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/london.jpg" alt="london" class="img-responsive center-block">
-                                <figcaption>
-                                    <h2>London</h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/statue_of_liberty.jpg" alt="statue_of_liberty" class="img-responsive center-block">
-                                <figcaption>
-                                    <h2>U.S.A</h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="grid center-block">
-                            <figure class="effect-zoe">
-                                <img src="img/pizza_tower.jpg" alt="pizza_tower" class="img-responsive center-block">
-                                <figcaption>
-                                    <h2>Pizza Tower</h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien.
-                                    </p>
-                                </figcaption>           
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- /Portfolio -->
-
-        <!-- Call to Action -->
-        <div class="call-to-action">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <h3>We provide online booking</h3>
-                        <a href="#" class="btn booking-btn text-center" data-toggle="modal" data-target="#booking">Click for Booking !</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Call to Action -->
+				
+				<div class="row">
+				<%
+					int id=0;
+					String name="", station="", img="", line="";
+					String[] theme_a=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
+					Statement stmt=null;
+					PreparedStatement pstmt=null;
+					ResultSet rs=null;
+					String sql="";
+					if(request.getParameter("id")!=null){
+						id=Integer.parseInt(request.getParameter("id"));
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+id+" order by a.name";
+					}
+					else{
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+					}
+					rs=DB.getResult(sql);
+					if(rs==null){
+						out.println("DB연동 오류");
+					}
+					else{
+						while(rs.next()){
+							name=rs.getString("name");
+							System.out.println(name);
+							station=rs.getString("station");
+							img=rs.getString("img");
+							line=rs.getString("line");
+						%>				
+							<!-- DB에서 불러오기 -->
+							<div class="col-md-6 col-sm-12 col-xs-12">
+		                        <div class="grid center-block">
+		                            <figure class="effect-zoe">
+		                                <img src="<%=img %> " class="img-responsive center-block" style="width:800px;height:400px;">
+		                                <figcaption>
+		                                    <h2><%=name %> </h2>
+		                                    <p class="icon-links">
+		                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+		                                        <a href="#"><i class="fa fa-eye"></i></a>
+		                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
+		                                    </p>
+		                                    <p class="description"><%=line%>호선 &nbsp<%=station %>역</p>
+		                                </figcaption>           
+		                            </figure>
+		                        </div>
+		                    </div>
+						<% } %>					
+					<%} %>					
+				</div>
+			</div>
+		</div>
 
         <!-- Footer -->
         <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-facebook"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-dribbble"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-pinterest"></i>
-                            </li>
-                        </ul>
-                        <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>
@@ -278,44 +144,6 @@
             </div>
         </footer>
         <!-- /Footer -->
-
-        <!-- begin:booking -->
-        <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Online Booking Form</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="emailAddress">Email address</label>
-                                <input id="emailAddress" type="email" class="form-control input-lg" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input id="password" type="password" class="form-control input-lg" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Which country do you want to travel?</label>
-                                <select class="form-control" id="country">
-                                    <option>Australia</option>
-                                    <option>Bangladesh</option>
-                                    <option>England</option>
-                                    <option>France</option>
-                                    <option>U.S.A</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn confirm-btn" value="Confirm">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end:booking -->
 
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>

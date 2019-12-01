@@ -51,9 +51,7 @@
     </head>
 
     <body>
-
-        <%@ include file = "sidemenubar.jsp" %>
-
+  		<%@ include file = "sidemenubar.jsp" %>
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
@@ -74,27 +72,30 @@
             <div class="container">
 				<table width = "100%">
 					<tr>
-						<td><button type="button" class="btn2">#1호선</button></td>
-						<td><button type="button" class="btn2">#2호선</button></td>
-						<td><button type="button" class="btn2">#3호선</button></td>
-						<td><button type="button" class="btn2">#4호선</button></td>
-						<td><button type="button" class="btn2">#5호선</button></td>
-						<td><button type="button" class="btn2">#6호선</button></td>
-						<td><button type="button" class="btn2">#7호선</button></td>
-						<td><button type="button" class="btn2">#8호선</button></td>
-						<td><button type="button" class="btn2">#9호선</button></td>
+						<td><button type="button" class="btn2" onclick="location.href='line.jsp'">전체</button></td>	
+						<% for(int i=1;i<=9;i++){ %>
+						<td><button type="button" class="btn2" onclick="location.href='line.jsp?id=<%=i%>'">#<%=i %>호선</button></td>
+						<%}%>				
 					</tr>
 				</table>
 				
 				<div class="row">
 				<%
-					int id, ref=0;
-					String name="", station="", img="";
+					int id=0;
+					String name="", station="", img="", line="";
 					Connection conn=null;
 					Statement stmt=null;
 					ResultSet rs=null;
-					
-					String sql="select * from attraction";
+					String sql="";
+					request.setCharacterEncoding("utf-8");
+					if(request.getParameter("id")!=null){
+						id=Integer.parseInt(request.getParameter("id"));
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num and l.line_num like '%"+id+"%' order by a.name";
+
+					}
+					else{
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+					}
 					rs=DB.getResult(sql);
 					if(rs==null){
 						out.println("DB연동 오류");
@@ -103,20 +104,16 @@
 						name=rs.getString("name");
 						station=rs.getString("station");
 						img=rs.getString("img");
+						line=rs.getString("line");
 					%>
 					<!-- DB에서 불러오기 -->
 					<div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="grid center-block">
                             <figure class="effect-zoe">
-                                <img src="<%=img %> " class="img-responsive center-block" width="800px" height="400px">
+                                <img src="<%=img %> " class="img-responsive center-block" style="width:800px;height:400px;">
                                 <figcaption>
                                     <h2><%=name %> </h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
-                                    <p class="description"><%=station %></p>
+                                    <p class="description"><%=line%>호선 &nbsp<%=station %>역</p>
                                 </figcaption>           
                             </figure>
                         </div>
@@ -124,27 +121,13 @@
 					<% }%>
 				</div>
 			</div>
+		</div>
         <!-- Footer -->
         <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-facebook"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-dribbble"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-pinterest"></i>
-                            </li>
-                        </ul>
                         <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>
