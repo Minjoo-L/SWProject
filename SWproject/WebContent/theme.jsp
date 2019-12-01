@@ -91,10 +91,10 @@
 					String sql="";
 					if(request.getParameter("id")!=null){
 						id=Integer.parseInt(request.getParameter("id"));
-						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+id+" order by a.name";
+						sql="select a.name, a.img, a.station, a.id, s.line from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+id+" order by a.name";
 					}
 					else{
-						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+						sql="select a.name, a.img, a.station, a.id, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
 					}
 					rs=DB.getResult(sql);
 					if(rs==null){
@@ -106,7 +106,8 @@
 							System.out.println(name);
 							station=rs.getString("station");
 							img=rs.getString("img");
-							line=rs.getString("line");
+                            line=rs.getString("line");
+                            id = Integer.parseInt(rs.getString("id"));
 						%>				
 							<!-- DB에서 불러오기 -->
 							<div class="col-md-6 col-sm-12 col-xs-12">
@@ -114,13 +115,14 @@
 		                            <figure class="effect-zoe">
 		                                <img src="<%=img %> " class="img-responsive center-block" style="width:800px;height:400px;">
 		                                <figcaption>
-		                                    <h2><%=name %> </h2>
+		                                     <!-- 호선별이나 테마별이나 보여주는 게시글은 같아서 페이지 주소가 details로 시작. -->
+                                            <h2><a href="details.jsp?id=<%=id%>"><%=name %></a></h2>
 		                                    <p class="icon-links">
 		                                        <a href="#"><i class="fa fa-heart-o"></i></a>
 		                                        <a href="#"><i class="fa fa-eye"></i></a>
 		                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
 		                                    </p>
-		                                    <p class="description"><%=line%>호선 &nbsp<%=station %>역</p>
+                                            <p class="description"><a href="details.jsp?id=<%=id%>"><%=line%>호선 &nbsp<%=station %>역</a></p>
 		                                </figcaption>           
 		                            </figure>
 		                        </div>

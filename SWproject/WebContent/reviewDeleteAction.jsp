@@ -18,15 +18,15 @@
 	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw","swProject","swproject_moon");
     request.setCharacterEncoding("UTF-8");
 	String user_id = request.getParameter("user_id");
-	int posting_id = Integer.parseInt(request.getParameter("posting_id"));
-	System.out.println("아이디는 무엇?" + user_id +" "+ posting_id);
+	String time = request.getParameter("time");
+	//System.out.println("아이디는 무엇?" + user_id +" "+ posting_id);
 	
-	// 사용자 아이디와 게시글 번호로 삭제 
-	String sql = "delete from review_test where user_id=? and posting_id = ?";
+	// 사용자 아이디와 시간으로 삭제 
+	String sql = "delete from review_test where user_id=? and time = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user_id);
-			pstmt.setInt(2, posting_id);
+			pstmt.setString(2, time);
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
