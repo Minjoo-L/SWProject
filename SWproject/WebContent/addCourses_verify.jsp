@@ -45,11 +45,11 @@
 		value = DB.excuteUpdateRB(sqlI);
 		
 		if(value)
-		{
-			//out.println("<script>");
-			//out.println("alert('코스가 성공적으로 추가되었습니다')");
-			//out.println("</script>");
-			response.sendRedirect("addCourses.jsp");
+		{%>
+		<script>
+			alert("코스가 추가되었습니다.");
+		</script>
+		<%	response.sendRedirect("addCourses.jsp");
 		}
 
 		%>

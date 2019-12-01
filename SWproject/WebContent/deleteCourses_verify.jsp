@@ -16,6 +16,7 @@
 	    request.setCharacterEncoding("UTF-8");
 		String c_name = request.getParameter("c_name");
 		System.out.println(c_name);
+		// 사용자 아이디와 게시글 번호로 삭제 
 		String sql = "delete from courses where c_name='"+c_name+"'";
 			try {
 				DB.excuteUpdate(sql);

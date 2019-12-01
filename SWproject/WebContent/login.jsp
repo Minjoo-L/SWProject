@@ -146,46 +146,6 @@ input[type="submit"]{
             </div>
         </footer>
         <!-- /Footer -->
-
-        <!-- begin:booking -->
-        <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Online Booking Form</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="emailAddress">Email address</label>
-                                <input id="emailAddress" type="email" class="form-control input-lg" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input id="password" type="password" class="form-control input-lg" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Which country do you want to travel?</label>
-                                <select class="form-control" id="country">
-                                    <option>Australia</option>
-                                    <option>Bangladesh</option>
-                                    <option>England</option>
-                                    <option>France</option>
-                                    <option>U.S.A</option>
-                                </select>
-                            </div>
-                            
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn confirm-btn" value="Confirm">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end:booking -->
-
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>
@@ -236,72 +196,6 @@ input[type="submit"]{
             });
 
         </script>
-	////////////////////////////////////////////////////////////////////////////////////////////
    
 </body>
 </html>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style1.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-    input[type="text"]{
-            border:none;
-            border-bottom:2px solid #D1C4E9;
-        }
-    input[type="password"]{
-            border:none;
-            border-bottom:2px solid #D1C4E9;
-    }
-input[type="submit"]{
-  background-color: #D1C4E9;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius:10px;
-  width:260px;
-  height:38px;
-}
- .box{
-        position:absolute;
-        top:0;left:0;bottom:0;right:0;
-        height:10%;
-        margin:15% auto;
-        text-align:center;
-    }
-.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-    </style>
-</head>
-<body>
-    <form action="/join" method="post">
-        <div class="box">
-        <h1><font size="10" color="#673AB7">Join Page</font></h1><br>
-        아이디  &nbsp<input type="text" name="user_id"><br/>
-        비밀번호  &nbsp<input type="password" name="user_pwd"><br/>
-        닉네임  &nbsp<input type="text" name="user_nickname"><br/><br>
-        <input type="submit" value="회원가입">
-    </div>
-    </form>
-</body>
-</html>-->

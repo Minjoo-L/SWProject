@@ -11,19 +11,6 @@
 </head>
 <body>
 <%
-
-	String user_id = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
-	
-	if(user_id == null){
-		%>
-		<script>
-		alert('로그인을 해주세요 '); 
-		location.href='login.jsp';
-		</script>
-		 <% 
-	}
-	else{
-		
 	//place_details에서 보내온 변수 저장 
 	ResultSet rs=null;
     PreparedStatement pstmt = null;
