@@ -50,10 +50,12 @@
     	ResultSet m = null;
 		int i = 0;
 	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="",thrplace_name="", forplace_name="";
-	 	int id = 0;
+	 	String id = "";
 	 	request.setCharacterEncoding("utf-8");
 	 	//where조건을 이제는 게시글 제목으로 찾는걸로 바꾸기 
-	 	String sql = "select firplace_name, secplace_name, thrplace_name, forplace_name from courses where id=6";
+         id = request.getParameter("id");
+	 	String sql = "select firplace_name, secplace_name, thrplace_name, forplace_name from courses where id=";
+         sql += id;
 	 	rs = DB.getResult(sql);
 	 	String[][] item = new String[4][13];
 	%>
@@ -62,8 +64,8 @@
             <div class="container">
 				<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/theme"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p algn="right"><a href="/message"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p align="left"><a href="/theme"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="/message"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 				</table>
                 <div class="row">
