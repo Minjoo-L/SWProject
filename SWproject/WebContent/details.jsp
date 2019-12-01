@@ -94,6 +94,9 @@ input[type="password"] {
 	width: 30px;
 	height: 38px;
 }
+    footer{
+	background-color:#E8F5FF;
+	}
 </style>
 </head>
 <body id="body">

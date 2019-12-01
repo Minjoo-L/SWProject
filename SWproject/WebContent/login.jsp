@@ -41,7 +41,9 @@ input[type="submit"]{
   width:260px;
   height:38px;
 }
-
+	footer{
+	background-color:#E8F5FF;
+	}
     .box{
         position:center;
         top:0;left:0;bottom:0;right:0;
@@ -137,7 +139,7 @@ input[type="submit"]{
                             </li>
                         </ul>
                         <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>

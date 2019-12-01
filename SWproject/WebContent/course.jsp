@@ -35,6 +35,9 @@
   width:30px;
   height:38px;
 	}
+    footer{
+	background-color:#E8F5FF;
+	}
     A:link {text-decoration:none; color:white;}
    	A:visited {text-decoration: none; color:white;}
     A:active {text-decoration: none; color:white;}
@@ -61,8 +64,8 @@
             <div class="container">
 				<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/theme"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/message"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p algn="left"><a href="theme.jsp"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="contact.jsp"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 				</table>
                 <div class="row">
@@ -109,7 +112,64 @@
                 </div>
             </div>
         </div>
-                
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <ul class="list-inline">
+                           
+                        </ul>
+                        <hr>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject"><font color=black>software_project 세일러문조</font></a>  2019</p>
+                        <div class="top-scroll">
+                            <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+
+        <!-- begin:booking -->
+        <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Online Booking Form</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="emailAddress">Email address</label>
+                                <input id="emailAddress" type="email" class="form-control input-lg" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" class="form-control input-lg" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Which country do you want to travel?</label>
+                                <select class="form-control" id="country">
+                                    <option>Australia</option>
+                                    <option>Bangladesh</option>
+                                    <option>England</option>
+                                    <option>France</option>
+                                    <option>U.S.A</option>
+                                </select>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn confirm-btn" value="Confirm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end:booking -->                
 
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>

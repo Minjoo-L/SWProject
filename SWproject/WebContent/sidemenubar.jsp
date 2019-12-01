@@ -31,9 +31,6 @@
                 <li>
                     <a href="course.jsp">추천 코스</a>
                 </li>
-				<li>
-                    <a href="message.jsp">쪽지보내기</a>
-                </li>
                 <% if("admin".equals(userid) && userid != null){%>
                 <li>
                     <a href="addCourses.jsp">코스 추가 </a>

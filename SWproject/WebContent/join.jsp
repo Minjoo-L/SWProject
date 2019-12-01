@@ -49,6 +49,9 @@ input[type="submit"]{
         margin:15% auto;
         text-align:center;
     }
+    footer{
+	background-color:#E8F5FF;
+	}
     input[type="text"]{
             border:none;
             border-bottom:2px solid #0A9696;
@@ -81,7 +84,7 @@ input[type="submit"]{
 					<br><br>
 					<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p algn="left"><a href="main.jsp"><button type="button" class="btn1">before</button></a></p></td>
 							
 						</tr>
 					</table>
@@ -155,7 +158,7 @@ input[type="submit"]{
                             </li>
                         </ul>
                         <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>
@@ -213,6 +216,73 @@ input[type="submit"]{
                 });
             });
 
-        </script>   
+        </script>
+	////////////////////////////////////////////////////////////////////////////////////////////
+   
 </body>
 </html>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    input[type="text"]{
+            border:none;
+            border-bottom:2px solid #D1C4E9;
+        }
+    input[type="password"]{
+            border:none;
+            border-bottom:2px solid #D1C4E9;
+    }
+input[type="submit"]{
+  background-color: #D1C4E9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:10px;
+  width:260px;
+  height:38px;
+}
+ .box{
+        position:absolute;
+        top:0;left:0;bottom:0;right:0;
+        height:10%;
+        margin:15% auto;
+        text-align:center;
+    }
+.btn1{
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius:10px;
+  width:30px;
+  height:38px;
+	}
+    </style>
+</head>
+<body>
+    <form action="/join" method="post">
+        <div class="box">
+        <h1><font size="10" color="#673AB7">Join Page</font></h1><br>
+        아이디  &nbsp<input type="text" name="user_id"><br/>
+        비밀번호  &nbsp<input type="password" name="user_pwd"><br/>
+        닉네임  &nbsp<input type="text" name="user_nickname"><br/><br>
+        <input type="submit" value="회원가입">
+    </div>
+    </form>
+</body>
+</html>-->

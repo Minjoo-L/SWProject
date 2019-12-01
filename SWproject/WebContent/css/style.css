@@ -832,14 +832,17 @@ figure.effect-zoe:hover p.icon-links a:first-child {
     color:    #727272;
   }
 
+///////////잠깐 주석처리
 /* Footer */
 
 footer {
-  padding: 100px 0;
-  background:url(../img/sky.jpg);
+  padding: 100px 0px;
+  background-color:#C8C8FF;
   height: 330px;
+  width: 100px;
   margin-top: -20px;
 }
+
 
 .list-inline{
   margin-bottom: 50px;

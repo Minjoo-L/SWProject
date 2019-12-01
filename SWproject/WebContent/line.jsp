@@ -36,6 +36,9 @@
   width:30px;
   height:38px;
 	}
+    footer{
+	background-color:#E8F5FF;
+	}
 		.btn2{
   background-color: white;
   border: none;
@@ -57,8 +60,8 @@
             <div class="container">
 				<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/theme"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p algn="left"><a href="main.jsp"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="theme.jsp"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 					</table>
                 <div class="row">
@@ -90,11 +93,11 @@
 					request.setCharacterEncoding("utf-8");
 					if(request.getParameter("id")!=null){
 						id=Integer.parseInt(request.getParameter("id"));
-						sql="select a.name, a.img, a.station, a.id, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num and l.line_num like '%"+id+"%' order by a.name";
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num and l.line_num like '%"+id+"%' order by a.name";
 
 					}
 					else{
-						sql="select a.name, a.img, a.station, a.id, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
 					}
 					rs=DB.getResult(sql);
 					if(rs==null){
@@ -104,8 +107,7 @@
 						name=rs.getString("name");
 						station=rs.getString("station");
 						img=rs.getString("img");
-                        line=rs.getString("line");
-                        id = Integer.parseInt(rs.getString("id"));
+						line=rs.getString("line");
 					%>
 					<!-- DB에서 불러오기 -->
 					<div class="col-md-6 col-sm-12 col-xs-12">
@@ -113,8 +115,8 @@
                             <figure class="effect-zoe">
                                 <img src="<%=img %> " class="img-responsive center-block" style="width:800px;height:400px;">
                                 <figcaption>
-                                    <h2><a href="details.jsp?id=<%=id%>"><%=name %></a></h2>
-                                    <p class="description"><a href="details.jsp?id=<%=id%>"><%=line%>호선 &nbsp<%=station %>역</a></p>
+                                    <h2><%=name %> </h2>
+                                    <p class="description"><%=line%>호선 &nbsp<%=station %>역</p>
                                 </figcaption>           
                             </figure>
                         </div>
@@ -128,7 +130,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
+                        <ul class="list-inline">
+                           
+                        </ul>
                         <hr>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject"><font color=black>software_project 세일러문조</font></a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>

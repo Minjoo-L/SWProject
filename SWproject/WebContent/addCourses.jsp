@@ -60,6 +60,9 @@ input[type="submit"]{
             border:none;
             border-bottom:2px solid #0A9696;
     }
+    footer{
+	background-color:#E8F5FF;
+	}
 		
 		.btn1{
   background-color: white;
@@ -390,8 +393,8 @@ LinkedIn
 					<br><br>
 					<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/deleteCourses"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p algn="left"><a href="main.jsp"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="deleteCourses.jsp"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 					</table>
 					
@@ -543,7 +546,7 @@ LinkedIn
                             </li>
                         </ul>
                         <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>

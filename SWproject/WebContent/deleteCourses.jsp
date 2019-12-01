@@ -93,6 +93,9 @@
      	 	width: 90%;
      	 	height: 100%;
     	}
+    	footer{
+	background-color:#E8F5FF;
+	}
 	</style>
 	</head>
 <body>
@@ -185,7 +188,7 @@
                             </li>
                         </ul>
                         <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>

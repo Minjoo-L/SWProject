@@ -33,6 +33,9 @@
   width:30px;
   height:38px;
 	}
+    footer{
+	background-color:#E8F5FF;
+	}
 </style>
     </head>
 
@@ -43,8 +46,8 @@
         <div id="contact" class="container parallax">
 			<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/message"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p algn="left"><a href="course.jsp"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="main.jsp"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 					</table>
             <div class="col-md-4 col-md-offset-4 text-center">
@@ -121,7 +124,7 @@
                             </li>
                         </ul>
                         <hr>
-                        <p>Copyright &copy; <a href="https://themewagon.com/">Themewagon</a>  2014</p>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>

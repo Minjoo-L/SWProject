@@ -46,6 +46,9 @@
    	A:visited {text-decoration: none; color:white;}
     A:active {text-decoration: none; color:white;}
     A:hover {text-decoration: none; color:white;}
+    footer{
+	background-color:#E8F5FF;
+	}
 </style>
     </head>
 
@@ -56,8 +59,8 @@
             <div class="container">
 				<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/theme"><button type="button" class="btn1">next</button></a></p></td>
+							<td><p algn="left"><a href="line.jsp"><button type="button" class="btn1">before</button></a></p></td>
+							<td><p align="right"><a href="course.jsp"><button type="button" class="btn1">next</button></a></p></td>
 						</tr>
 					</table>
                 <div class="row">
@@ -91,10 +94,10 @@
 					String sql="";
 					if(request.getParameter("id")!=null){
 						id=Integer.parseInt(request.getParameter("id"));
-						sql="select a.name, a.img, a.station, a.id, s.line from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+id+" order by a.name";
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+id+" order by a.name";
 					}
 					else{
-						sql="select a.name, a.img, a.station, a.id, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
 					}
 					rs=DB.getResult(sql);
 					if(rs==null){
@@ -106,8 +109,7 @@
 							System.out.println(name);
 							station=rs.getString("station");
 							img=rs.getString("img");
-                            line=rs.getString("line");
-                            id = Integer.parseInt(rs.getString("id"));
+							line=rs.getString("line");
 						%>				
 							<!-- DB에서 불러오기 -->
 							<div class="col-md-6 col-sm-12 col-xs-12">
@@ -115,14 +117,13 @@
 		                            <figure class="effect-zoe">
 		                                <img src="<%=img %> " class="img-responsive center-block" style="width:800px;height:400px;">
 		                                <figcaption>
-		                                     <!-- 호선별이나 테마별이나 보여주는 게시글은 같아서 페이지 주소가 details로 시작. -->
-                                            <h2><a href="details.jsp?id=<%=id%>"><%=name %></a></h2>
+		                                    <h2><%=name %> </h2>
 		                                    <p class="icon-links">
 		                                        <a href="#"><i class="fa fa-heart-o"></i></a>
 		                                        <a href="#"><i class="fa fa-eye"></i></a>
 		                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
 		                                    </p>
-                                            <p class="description"><a href="details.jsp?id=<%=id%>"><%=line%>호선 &nbsp<%=station %>역</a></p>
+		                                    <p class="description"><%=line%>호선 &nbsp<%=station %>역</p>
 		                                </figcaption>           
 		                            </figure>
 		                        </div>
@@ -138,6 +139,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
+                        <ul class="list-inline">
+                           
+                        </ul>
+                        <hr>
+                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject"><font color=black>software_project 세일러문조</font></a>  2019</p>
                         <div class="top-scroll">
                             <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
                         </div>

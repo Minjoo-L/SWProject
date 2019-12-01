@@ -92,6 +92,9 @@
      	 	width: 90%;
      	 	height: 100%;
     	}
+    footer{
+	background-color:#E8F5FF;
+	}
 	</style>
 	
 	</head>
