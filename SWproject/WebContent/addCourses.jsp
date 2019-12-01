@@ -427,13 +427,15 @@ LinkedIn
     		<span class="a-field__label-wrap">
       		<span class="a-field__label">추가하고싶은 코스이름</span>
     		</span>
+    		<br><br>
   			</label>
-  			<br>
+  			<hr width="50%">
   			<label class="field a-field a-field_a1">
     		<input class="field__input a-field__input" type="text" name="course_theme" placeholder="e.g. 힐링" required>
     		<span class="a-field__label-wrap">
       		<span class="a-field__label">코스 테마</span>
     		</span>
+    		<br><br>
   			</label>
   			
    			<br><br><br><br><br>
@@ -600,8 +602,6 @@ LinkedIn
                 });
             });
 
-        </script>
-	////////////////////////////////////////////////////////////////////////////////////////////
-   
+        </script>   
 </body>
 </html>

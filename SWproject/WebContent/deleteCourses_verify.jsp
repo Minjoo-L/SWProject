@@ -10,24 +10,37 @@
 </head>
 <body>
 <%
-		Boolean value;
-		PreparedStatement pstmt = null;
+		
+		int count=0;
 		ResultSet rs=null;
 	    request.setCharacterEncoding("UTF-8");
 		String c_name = request.getParameter("c_name");
 		System.out.println(c_name);
 		// 사용자 아이디와 게시글 번호로 삭제 
-		String sql = "delete from courses where c_name='"+c_name+"'";
-			try {
-				DB.excuteUpdate(sql);
-			}catch(Exception e) {
-				e.printStackTrace();
+		String sql1 = "select count(*) from courses";
+		try{
+			rs=DB.getResult(sql1);
+			while(rs.next()){
+				count=rs.getInt(1);
 			}
+			if(count<=10){
+				out.println("<script>alert('삭제할 수 없습니다.(코스가 최소 5개는 존재해야 됩니다.)');");
+				out.println("location.href='deleteCourses.jsp';</script>");	
+			}
+			else{
+				String sql2 = "delete from courses where c_name='"+c_name+"'";
+				try {
+					DB.excuteUpdate(sql2);
+					out.println("<script>alert('코스가 삭제되었습니다.');");
+					out.println("location.href='deleteCourses.jsp';</script>");	
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 %>
-		
-<script>
-	alert('삭제되었습니다.'); 
-	location.href='deleteCourses.jsp';
-</script>
 </body>
 </html>
