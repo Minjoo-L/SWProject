@@ -1,77 +1,102 @@
+<%@ page import="java.sql.*" %>
+<%@ page import="beans.JavaBeans" %>
+<jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<%@ page import="java.util.*"%>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	        <meta name="description" content="">
-        <meta name="author" content="">
+ 
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
 
-        <title>Festival Metro</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="">
+			<meta name="author" content="">
 
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.css" rel="stylesheet">
+				<title>Festival Metro </title>
 
-        <!-- Add custom CSS here -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+				<!-- Bootstrap core CSS -->
+				<link href="css/bootstrap.css" rel="stylesheet">
 
-		<!-- 추가한부분-->
-		  <link rel="stylesheet" href="style1.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-input[type="submit"]{
-  background-color: #28B4B4;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius:10px;
-  width:260px;
-  height:38px;
-}
+				<!-- Add custom CSS here -->
+				<link href="css/style.css" rel="stylesheet">
+				<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+				<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+				<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+				 <!-- bootstrap.min css -->
+		  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+		  <!-- Ionic Icon Css -->
+		  <link rel="stylesheet" href="plugins/Ionicons/css/ionicons.min.css">
+		  <!-- animate.css -->
+		  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+		  <!-- Magnify Popup -->
+		  <link rel="stylesheet" href="plugins/magnific-popup/dist/magnific-popup.css">
+		  <!-- Owl Carousel CSS -->
+		  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+		  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
 
-    .box{
-        position:center;
-        top:0;left:0;bottom:0;right:0;
-        height:10%;
-        margin:15% auto;
-        text-align:center;
-    }
-    input[type="text"]{
-            border:none;
-            border-bottom:2px solid #0A9696;
-        }
-    input[type="password"]{
-            border:none;
-            border-bottom:2px solid #0A9696;
-    }
+		  <!-- Main Stylesheet -->
+		  <link rel="stylesheet" href="css/style.css">
+		  <link rel="stylesheet" href="./css/swiper.min.css">
+
+				<!-- 추가한부분-->
+		    <link rel="stylesheet" href="style1.css">
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<title>오잉</title>
+			<style>
+		input[type="submit"]{
+		  background-color: #28B4B4;
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  border-radius:10px;
+		  width:260px;
+		  height:38px;
+		}
+
+		.box{
+			position:center;
+			top:0;left:0;bottom:0;right:0;
+			height:10%;
+			margin:15% auto;
+			text-align:center;
+		}
+		input[type="text"]{
+			border:none;
+			border-bottom:2px solid #0A9696;
+		}
+		input[type="password"]{
+			border:none;
+			border-bottom:2px solid #0A9696;
+		}
 		.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-</style>
-</head>
+		  background-color: white;
+		  border: none;
+		  color: black;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 20px;
+		  border-radius:10px;
+		  width:30px;
+		  height:38px;
+		}
+		.swiper-container {
+     	 	width: 90%;
+     	 	height: 100%;
+    	}
+	</style>
+	</head>
 <body>
-    <%@ include file = "sidemenubar.jsp" %>
+	    <%@ include file = "sidemenubar.jsp" %>
         <!-- Intro -->
         <div id="about">
             <div class="light-wrapper">
@@ -79,7 +104,7 @@ input[type="submit"]{
 					<br><br>
 					<table width="100%">
 						<tr>
-							<td><p algn="left"><a href="/addCourses"><button type="button" class="btn1">before</button></a>
+							<td><p algn="left"><a href="addCourses.jsp"><button type="button" class="btn1">before</button></a>
 								</p></td>
 							
 						</tr>
@@ -92,17 +117,47 @@ input[type="submit"]{
                             <hr>
                         </div>
 						
-	<div class="box">
-						
-   
-	</div>	
-    
-    </form>
-
-                        
+						<div class="page">
+								<%
+								String name="";
+								int i=0;
+								Connection conn=null;
+								Statement stmt=null;
+								ResultSet rs=null;
+								
+								String sql="select * from courses";
+								rs=DB.getResult(sql);
+								
+								if(rs==null){
+									out.println("DB연동 오류");
+								}
+								
+								%>
+								<h3 class="post-sub-heading" style="text-align: center;">코스 목록</a></h3> 
+								
+										<% while(rs.next()){
+											String c_name=rs.getString(1);
+											String c_theme=rs.getString(2);
+											String c_first=rs.getString(3);
+											String c_second=rs.getString(4);
+											String c_third=rs.getString(5);
+											String c_fourth=rs.getString(6);
+										%>
+										<form action="deleteCourses_verify.jsp" method="post" id="form" role="form">
+											<div class="form-group col-md-12">
+											<p>코스 이름 : <%=c_name %></p>
+											<button type="submit" class="btn btn-main "style="float: right;">삭제</button>
+											<p>코스 테마 : <%=c_theme %></p>
+											<p>코스 내용 : </p>
+											<p> <%=c_first %><%=", " %><%=c_second %><%=", " %><%=c_third %><%=", " %><%=c_fourth %></p>
+											<input type="hidden" name="c_name" value="<%=c_name %>">  
+											<hr width="100%">
+											</div>							   			
+					  					</form>
+					  					<%} %>
+						</div>   
                       </div>
-                      <!-- /.row --> 
-                      
+                      <!-- /.row -->        
                     </div>
                     <!-- /.container --> 
                   </div>
@@ -139,45 +194,6 @@ input[type="submit"]{
             </div>
         </footer>
         <!-- /Footer -->
-
-        <!-- begin:booking -->
-        <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Online Booking Form</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="emailAddress">Email address</label>
-                                <input id="emailAddress" type="email" class="form-control input-lg" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input id="password" type="password" class="form-control input-lg" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Which country do you want to travel?</label>
-                                <select class="form-control" id="country">
-                                    <option>Australia</option>
-                                    <option>Bangladesh</option>
-                                    <option>England</option>
-                                    <option>France</option>
-                                    <option>U.S.A</option>
-                                </select>
-                            </div>
-                            
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn confirm-btn" value="Confirm">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end:booking -->
 
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
