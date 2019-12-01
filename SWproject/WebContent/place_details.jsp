@@ -90,6 +90,7 @@
 	  <%@ include file = "sidemenubar.jsp" %>
 	
 			<%
+			String login_user = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
 			ResultSet rs=null;
 			 request.setCharacterEncoding("utf-8");
 			 String score ="", content ="", time ="", user_id="";
@@ -180,6 +181,14 @@
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 										<div class=" from-group col-md-12" >
+												<%
+												System.out.println(user_id);
+												if(login_user.equals(user_id) && login_user != null){
+												%>
+													<button type="submit" class="btn btn-main "style="float: right;">
+														  삭제 
+													 </button>
+												<% } %>
 												<p>평점:  &nbsp <%=score %></p>
 												<p>내용: <%=content %> </p>
 												<h5>작성자:  &nbsp <%=user_id%> &nbsp[<%=date%> / <%=tt %>] </h5>
