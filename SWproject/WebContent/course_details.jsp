@@ -40,8 +40,20 @@
     </head>
 
     <body>
+        
         <%@ include file = "sidemenubar.jsp" %>
-
+        <%
+		ResultSet rs =null;
+    	ResultSet m = null;
+		int i = 0;
+	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="",thrplace_name="", forplace_name="";
+	 	int id = 0;
+	 	request.setCharacterEncoding("utf-8");
+	 	//where조건을 이제는 게시글 제목으로 찾는걸로 바꾸기 
+	 	String sql = "select firplace_name, secplace_name, thrplace_name, forplace_name from courses where id=6";
+	 	rs = DB.getResult(sql);
+	 	String[][] item = new String[4][13];
+	%>
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
