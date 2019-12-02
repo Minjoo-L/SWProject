@@ -38,7 +38,7 @@
 	alert('삭제되었습니다.'); 
 	//관리자일 경우 
 	<%if(login_user.equals("admin")){%>
-	location.href="<%= referer%>";
+		location.href="deleteReview.jsp";
 	//관리자가 아닐경우 
 	<%}else {%>
 		location.href = "<%= referer%>"
