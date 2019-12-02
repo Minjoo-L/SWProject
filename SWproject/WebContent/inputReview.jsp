@@ -7,9 +7,10 @@
 	request.setCharacterEncoding("utf-8");
 	int id = Integer.parseInt(request.getParameter("id"));
 	String c_name = request.getParameter("c_name");
+	String kind = request.getParameter("kind");
 	
-	System.out.println("id는 "+id);
-	System.out.println("c_nam은 "+c_name);
+	//System.out.println("id는 "+id);
+	//System.out.println("c_nam은 "+c_name);
 	%>
 	<form method="post" action="reviewAction.jsp" id="form" role="form">
 		<div class="row">
@@ -35,6 +36,7 @@
 			<div class="form-group col-md-12">
 				<input type="hidden" name="id" value="<%=id%>"> 
 				<input	type="hidden" name="c_name" value="<%= c_name%>">
+				<input type = "hidden" name ="kind" value = "<%=kind %>">
 				<button type="submit" class="btn btn-main ">완료</button>
 			</div>
 

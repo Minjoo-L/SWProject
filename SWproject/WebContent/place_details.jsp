@@ -94,6 +94,8 @@
 	
 			<%
 			String login_user = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
+			//로그인 안 해도 글 볼 수 있게 처리 
+			if ( login_user == null) login_user = "";
 			ResultSet rs=null;
 			 request.setCharacterEncoding("utf-8");
 			 String score ="", content ="", time ="", user_id="";
@@ -184,6 +186,8 @@
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 										<div class=" from-group col-md-12" >
+											<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
+
 												<%
 												System.out.println(user_id);
 												if(login_user.equals(user_id) && login_user != null){
@@ -196,47 +200,19 @@
 												<p>내용: <%=content %> </p>
 												<h5>작성자:  &nbsp <%=user_id%> &nbsp[<%=date%> / <%=tt %>] </h5>
 												<hr width = "100%">
+												<input type="hidden" name = "time" value = "<%=time%>"/>
+												<input type="hidden" name = "user_id" value = "<%=userId %>"/>
+										</form>
 										</div>
 								</div>
 						<% } %>
 					  </div>
 					</div>
-								  <div class="post-comments-form">
-									  <h3 class="post-sub-heading">후기 작성</h3>
-									  
-									  <form method="post" action="reviewAction.jsp" id="form" role="form" >
-										  <div class="row">
-											  <div class="col-md-6 form-group">
-												  <h3> 평점
-												  <select name="sortMtd" title="평점" class="optSelect2" onchange="$('#sortMethod').val(this.value);fnChgEvalMove(1)">
-													  <option value="5">5</option>
-													  <option value="4">4</option>
-													  <option value="3">3</option>
-													  <option value="2">2</option>
-													  <option value="1">1</option>
-												  </select>
-												  </h3>
-											  </div>
-											  <!-- Comment -->
-											  <div class="form-group col-md-12">
-												  <textarea name="review" id="review" class=" form-control" rows="6" placeholder="Comment" maxlength="400"></textarea>
-											  </div>
-
-											 <!-- Send Button -->
-											 <div class="form-group col-md-12">
-													<input type = "hidden" name = "id" value="<%=id %>">
-													<input type="hidden" name = "c_name" value ="<%= c_name %>">
-													<button type="submit" class="btn btn-main ">
-														완료
-													</button>
-											 </div>
-
-
-										  </div>
-
-									  </form>
-								  </div>
-
+					<jsp:include page="inputReview.jsp">
+							<jsp:param name = "c_name" value="<%=c_name %>"/>
+							<jsp:param name = "id" value = "<%=id %>"/>
+							<jsp:param name = "kind" value = "courses"/>
+					</jsp:include>	 
 
 							  </div>
 

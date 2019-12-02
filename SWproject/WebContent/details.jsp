@@ -104,6 +104,8 @@ input[type="password"] {
 
 	<%
 			String login_user = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
+			//로그인 안 해도 글 볼 수 있게 처리 
+			if ( login_user == null) login_user = "";
 			ResultSet rs=null;
 			 request.setCharacterEncoding("utf-8");
 			 String user_id ="", score="", content="";
@@ -204,9 +206,12 @@ input[type="password"] {
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 									<div class=" from-group col-md-12">
+									<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
+
 										<%
 											System.out.println(user_id);
-											if(login_user.equals(user_id) && login_user != null){
+											//이 부분에서 오류 난다면 다시 로그인 한 후 실행
+											if(login_user.equals(user_id) && login_user != ""){
 										%>
 										<button type="submit" class="btn btn-main "
 											style="float: right;">삭제</button>
@@ -226,6 +231,9 @@ input[type="password"] {
 											<%=tt %>]
 										</h5>
 										<hr width="100%">
+										<input type="hidden" name = "time" value = "<%=time%>"/>
+										<input type="hidden" name = "user_id" value = "<%=user_id %>"/>
+										</form>
 									</div>
 								</div>
 								<% } %>

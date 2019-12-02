@@ -93,13 +93,10 @@
      	 	width: 90%;
      	 	height: 100%;
     	}
-    footer{
-	background-color:#E8F5FF;
-	}
 	</style>
 	</head>
 		<body id ="body">
-				
+		
 	<%
 		ResultSet rs=null;
  		request.setCharacterEncoding("utf-8");
@@ -155,7 +152,7 @@
 											<p>내용: <%=content %> </p>
 											<h5>작성자:  &nbsp <%=user_id%> &nbsp[<%=date%> / <%=tt %>] </h5>
 											<input type = "hidden"name = "user_id" value="<%=user_id %>">
-											<input type="hidden" name = "posting_id" value ="<%=posting_id%>">
+											<input type="hidden" name = "time" value ="<%=time%>">
 											<hr width = "100%">
 											
 										</div>
