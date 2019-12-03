@@ -1,5 +1,6 @@
 <%@ page import="java.sql.*" %>
 <jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
+<jsp:useBean id="imgDB" class="beans.JavaBeans" scope="page"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,13 +48,14 @@
 
     <body>
     <%
-		ResultSet rs =null;
+		ResultSet rs =null, imgQuery = null;
 		int i = 0;
 	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="",thrplace_name="", forplace_name="";
 	 	int id = 0;
 	 	request.setCharacterEncoding("utf-8");
 	 	//where조건을 이제는 게시글 제목으로 찾는걸로 바꾸기 
 	 	String sql = "select * from courses";
+	 	String imgSql = "";
 	 	rs = DB.getResult(sql);
 	 	
 	%>
@@ -87,12 +89,25 @@
 				 		thrplace_name = rs.getString(5);
 				 		forplace_name = rs.getString(6);
 				 		id = rs.getInt(7);
+				 		System.out.println(rs.getRow());
 				 	%>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="grid center-block">
                         <a href="course_details.jsp?id=<%=id %>">
                             <figure class="effect-zoe">
-                                <img src="img/paris.jpg" alt="paris" class="img-responsive center-block">
+                            <%
+                            imgSql = "select img from attraction where name = \"";
+                            imgSql += firplace_name;
+                            imgSql += "\";";
+                            imgQuery = imgDB.getResult(imgSql);
+                            imgQuery.next();
+                            String imgUrl = imgQuery.getString(1);
+                            System.out.println(imgUrl);
+                            %>
+                            
+                            
+                            
+                                <img src=<%=imgUrl %> alt="paris" class="img-responsive center-block">
                                 <figcaption>
                                     <h2><%=c_name %></h2>
                                     <p class="icon-links">
@@ -101,7 +116,7 @@
                                         <a href="#"><i class="fa fa-bookmark-o"></i></a>
                                     </p>
                                     <p class="description">
-                                       	<%=forplace_name %>
+                                       	<%=firplace_name %>
                                     </p>
                                 </figcaption>           
                             </figure>
