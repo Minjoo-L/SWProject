@@ -45,15 +45,7 @@
 			
 			//사용자가 관리자라면 관리자 페이지로 이동
 			if(u_id.equals("admin") && u_pwd.equals("admin"))
-			{
-				response.sendRedirect("addCourses.jsp");
-			}
-			else
-			{
-				response.sendRedirect("main.jsp");//main.js페이지로 이동
-			}
-			
-			
+				response.sendRedirect("main.jsp");//main.js페이지로 이동			
 		}
 		else
 		{

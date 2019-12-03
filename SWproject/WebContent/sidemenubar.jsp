@@ -36,6 +36,9 @@
                     <a href="addCourses.jsp">코스 추가 </a>
                 </li>
                 <li>
+                    <a href="deleteCourses.jsp">코스 삭제 </a>
+                </li>
+                <li>
                     <a href="deleteReview.jsp">후기 삭제  </a>
                 </li>
                 <%
