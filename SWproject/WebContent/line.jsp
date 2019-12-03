@@ -159,8 +159,8 @@
 			<%
 				if(pg>BLOCK) {
 			%>
-				[<a href="paging_test.jsp?pg=1">◀◀</a>]
-				[<a href="paging_test.jsp?pg=<%=startPage-1%>">◀</a>]
+				[<a href="line.jsp?pg=1">◀◀</a>]
+				[<a href="line.jsp?pg=<%=startPage-1%>">◀</a>]
 			<%
 				}
 			%>
@@ -173,7 +173,7 @@
 			<%
 					}else{
 			%>
-						<a href="paging_test.jsp?pg=<%=i %>">[<%=i %>]</a>
+						<a href="line.jsp?pg=<%=i %>">[<%=i %>]</a>
 			<%
 					}
 				}
@@ -182,8 +182,8 @@
 			<%
 				if(endPage<allPage){
 			%>
-				[<a href="paging_test.jsp?pg=<%=endPage+1%>">▶</a>]
-				[<a href="paging_test.jsp?pg=<%=allPage%>">▶▶</a>]
+				[<a href="line.jsp?pg=<%=endPage+1%>">▶</a>]
+				[<a href="line.jsp?pg=<%=allPage%>">▶▶</a>]
 			<%
 				}
 			%>

@@ -39,25 +39,17 @@
     footer{
 	background-color:#E8F5FF;
 	}
-    A:link {text-decoration:none; color:white;}
-   	A:visited {text-decoration: none; color:white;}
-    A:active {text-decoration: none; color:white;}
-    A:hover {text-decoration: none; color:white;}
 </style>
 </head>
 
     <body>
     <%
-		ResultSet rs =null, imgQuery = null;
-		int i = 0;
-	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="",thrplace_name="", forplace_name="";
+		ResultSet rs =null;
+	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="";
 	 	int id = 0;
 	 	request.setCharacterEncoding("utf-8");
 	 	//where조건을 이제는 게시글 제목으로 찾는걸로 바꾸기 
-	 	String sql = "select * from courses";
-	 	String imgSql = "";
-	 	rs = DB.getResult(sql);
-	 	
+	 	String imgSql = "";	 	
 	%>
     <%@ include file = "sidemenubar.jsp" %>
 
@@ -79,44 +71,54 @@
             </div>  
             <div class="divide50">
 			</div>  
+			<%
+					
+		  			final int ROWSIZE=6; // 한페이지에 보일 게시물 수
+		  			final int BLOCK=4; // 아래에 보일 페이지 최대 개수 1~5 / 6~10 
+		  			int pg=1; // 기본 페이지 값
+		  			if(request.getParameter("pg")!=null){ // 다른 페이지 일 때
+		  				pg= Integer.parseInt(request.getParameter("pg"));
+		  			}
+		  			int start=(pg*ROWSIZE)-(ROWSIZE-1);
+		  			int end=(pg*ROWSIZE);
+		  			int allPage=0;
+		  			int startPage = ((pg-1)/BLOCK*BLOCK)+1; // 시작블럭숫자 (1~5페이지일경우 1, 6~10일경우 6)
+		  			int endPage = ((pg-1)/BLOCK*BLOCK)+BLOCK; // 끝 블럭 숫자 (1~5일 경우 5, 6~10일경우 10)
+		  			int total=0;
+		  	
+		  			String sql="select count(*) as cnt from courses";
+					rs=DB.getResult(sql);
+					while(rs.next()){
+						total=rs.getInt("cnt");
+					}
+					rs.close();
+					allPage=(int)Math.ceil(total/(double)ROWSIZE);
+					if(endPage>allPage){
+						endPage=allPage;
+					}
+			%>
             <div class="container">
                 <div class="row">
-                 <% while (rs.next()){
+                 <% 
+         	 		String sql2 = "SELECT c.c_name, c.id,  a.img , c.firplace_name, c.secplace_name FROM courses c, attraction a where a.name=c.firplace_name and c.id >="+start+" and c.id <= "+end +" order by c_name";
+                 	rs=DB.getResult(sql2);
+         	 		while (rs.next()){
 				 		c_name = rs.getString(1);
-				 		c_theme = rs.getString(2);
-				 		firplace_name = rs.getString(3);
-				 		secplace_name = rs.getString(4);
-				 		thrplace_name = rs.getString(5);
-				 		forplace_name = rs.getString(6);
-				 		id = rs.getInt(7);
-				 		System.out.println(rs.getRow());
+				 		System.out.println(c_name);
+				 		String imgUrl=rs.getString(3);
+				 		id = rs.getInt(2);
+				 		firplace_name=rs.getString(4);
+				 		secplace_name=rs.getString(5);
 				 	%>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="grid center-block">
                         <a href="course_details.jsp?id=<%=id %>">
                             <figure class="effect-zoe">
-                            <%
-                            imgSql = "select img from attraction where name = \"";
-                            imgSql += firplace_name;
-                            imgSql += "\";";
-                            imgQuery = imgDB.getResult(imgSql);
-                            imgQuery.next();
-                            String imgUrl = imgQuery.getString(1);
-                            System.out.println(imgUrl);
-                            %>
-                            
-                            
-                            
-                                <img src=<%=imgUrl %> alt="paris" class="img-responsive center-block">
+                                <img src=<%=imgUrl %> class="img-responsive center-block">
                                 <figcaption>
                                     <h2><%=c_name %></h2>
-                                    <p class="icon-links">
-                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a href="#"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-                                    </p>
                                     <p class="description">
-                                       	<%=firplace_name %>
+                                       	<%=firplace_name %>-<%=secplace_name %>...
                                     </p>
                                 </figcaption>           
                             </figure>
@@ -124,6 +126,46 @@
                         </div>
                     </div>
                     <% } %>
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+	  <tr><td colspan="4" height="5"></td></tr>
+	  <tr>
+		<td align="center">
+			<%
+				if(pg>BLOCK) {
+			%>
+				[<a href="course.jsp?pg=1">◀◀</a>]
+				[<a href="course.jsp?pg=<%=startPage-1%>">◀</a>]
+			<%
+				}
+			%>
+			
+			<%
+				for(int i=startPage; i<= endPage; i++){
+					if(i==pg){
+			%>
+						<u><b>[<%=i %>]</b></u>
+			<%
+					}else{
+			%>
+						<a href="course.jsp?pg=<%=i %>">[<%=i %>]</a>
+			<%
+					}
+				}
+			%>
+			
+			<%
+				if(endPage<allPage){
+			%>
+				[<a href="course.jsp?pg=<%=endPage+1%>">▶</a>]
+				[<a href="course.jsp?pg=<%=allPage%>">▶▶</a>]
+			<%
+				}
+			%>
+			</td>
+			</tr>
+			  <tr align="center">
+	  </tr> 
+	</table>
                 </div>
             </div>
         </div>
@@ -146,46 +188,6 @@
             </div>
         </footer>
         <!-- /Footer -->
-
-        <!-- begin:booking -->
-        <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Online Booking Form</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="emailAddress">Email address</label>
-                                <input id="emailAddress" type="email" class="form-control input-lg" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input id="password" type="password" class="form-control input-lg" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Which country do you want to travel?</label>
-                                <select class="form-control" id="country">
-                                    <option>Australia</option>
-                                    <option>Bangladesh</option>
-                                    <option>England</option>
-                                    <option>France</option>
-                                    <option>U.S.A</option>
-                                </select>
-                            </div>
-                            
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn confirm-btn" value="Confirm">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end:booking -->                
-
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>
