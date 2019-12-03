@@ -78,7 +78,7 @@
 						<% 
 						String[] theme_arr=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
 						for(int i=0;i<9;i++){ %>
-						<td><button type="button" class="btn2" onclick="location.href='theme.jsp?id=<%=i%>'"><%=theme_arr[i]%></button></td>
+						<td><button type="button" class="btn2" onclick="location.href='theme.jsp?num=<%=i%>'"><%=theme_arr[i]%></button></td>
 						<%}%>				
 					</tr>
 				</table>
@@ -86,18 +86,19 @@
 				<div class="row">
 				<%
 					int id=0;
+					int num=0;
 					String name="", station="", img="", line="";
 					String[] theme_a=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
 					Statement stmt=null;
 					PreparedStatement pstmt=null;
 					ResultSet rs=null;
 					String sql="";
-					if(request.getParameter("id")!=null){
-						id=Integer.parseInt(request.getParameter("id"));
-						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+id+" order by a.name";
+					if(request.getParameter("num")!=null){
+						num=Integer.parseInt(request.getParameter("num"));
+						sql="select a.name, a.img, a.station, s.line, a.id from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+num+" order by a.name";
 					}
 					else{
-						sql="select a.name, a.img, a.station, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+						sql="select a.name, a.img, a.station, s.line, a.id from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
 					}
 					rs=DB.getResult(sql);
 					if(rs==null){
@@ -110,6 +111,7 @@
 							station=rs.getString("station");
 							img=rs.getString("img");
 							line=rs.getString("line");
+							id=Integer.parseInt(rs.getString("id"));
 						%>				
 							<!-- DB에서 불러오기 -->
 							<!-- DB에서 불러오기 -->
