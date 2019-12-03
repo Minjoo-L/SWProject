@@ -112,20 +112,18 @@
 							line=rs.getString("line");
 						%>				
 							<!-- DB에서 불러오기 -->
+							<!-- DB에서 불러오기 -->
 							<div class="col-md-6 col-sm-12 col-xs-12">
 		                        <div class="grid center-block">
+		                        	<a href="details.jsp?id=<%=id %>">
 		                            <figure class="effect-zoe">
 		                                <img src="<%=img %> " class="img-responsive center-block" style="width:800px;height:400px;">
 		                                <figcaption>
-		                                    <h2><%=name %> </h2>
-		                                    <p class="icon-links">
-		                                        <a href="#"><i class="fa fa-heart-o"></i></a>
-		                                        <a href="#"><i class="fa fa-eye"></i></a>
-		                                        <a href="#"><i class="fa fa-bookmark-o"></i></a>
-		                                    </p>
+		                                    <h2><%=name %></h2>
 		                                    <p class="description"><%=line%>호선 &nbsp<%=station %>역</p>
 		                                </figcaption>           
 		                            </figure>
+		                            </a>
 		                        </div>
 		                    </div>
 						<% } %>					

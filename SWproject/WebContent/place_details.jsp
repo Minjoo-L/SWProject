@@ -201,7 +201,7 @@
 												<h5>작성자:  &nbsp <%=user_id%> &nbsp[<%=date%> / <%=tt %>] </h5>
 												<hr width = "100%">
 												<input type="hidden" name = "time" value = "<%=time%>"/>
-												<input type="hidden" name = "user_id" value = "<%=userId %>"/>
+												<input type="hidden" name = "user_id" value = "<%=user_id %>"/>
 										</form>
 										</div>
 								</div>

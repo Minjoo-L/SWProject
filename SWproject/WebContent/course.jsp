@@ -43,7 +43,7 @@
     A:active {text-decoration: none; color:white;}
     A:hover {text-decoration: none; color:white;}
 </style>
-    </head>
+</head>
 
     <body>
     <%
@@ -90,22 +90,22 @@
 				 	%>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="grid center-block">
+                        <a href="course_details.jsp?id=<%=id %>">
                             <figure class="effect-zoe">
                                 <img src="img/paris.jpg" alt="paris" class="img-responsive center-block">
                                 <figcaption>
-                                    <h2><a href="place_details.jsp?id=<%=id%>"><%=c_name %></a></h2>
+                                    <h2><%=c_name %></h2>
                                     <p class="icon-links">
                                         <a href="#"><i class="fa fa-heart-o"></i></a>
                                         <a href="#"><i class="fa fa-eye"></i></a>
                                         <a href="#"><i class="fa fa-bookmark-o"></i></a>
                                     </p>
                                     <p class="description">
-										<a href="place_details.jsp?id=<%=id%>">
-                                       		<%=forplace_name %>
-										</a>
+                                       	<%=forplace_name %>
                                     </p>
                                 </figcaption>           
                             </figure>
+                           </a>
                         </div>
                     </div>
                     <% } %>
