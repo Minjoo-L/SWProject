@@ -42,13 +42,6 @@
   font-size: 20px;
   height:38px;
 	}
-	A:link {text-decoration:none; color:white;}
-   	A:visited {text-decoration: none; color:white;}
-    A:active {text-decoration: none; color:white;}
-    A:hover {text-decoration: none; color:white;}
-    footer{
-	background-color:#E8F5FF;
-	}
 </style>
     </head>
 
@@ -82,7 +75,21 @@
 						<%}%>				
 					</tr>
 				</table>
-				
+				<%
+					
+		  			final int ROWSIZE=8; // 한페이지에 보일 게시물 수
+		  			final int BLOCK=5; // 아래에 보일 페이지 최대 개수 1~5 / 6~10 
+		  			int pg=1; // 기본 페이지 값
+		  			if(request.getParameter("pg")!=null){ // 다른 페이지 일 때
+		  				pg= Integer.parseInt(request.getParameter("pg"));
+		  			}
+		  			int start=(pg*ROWSIZE)-(ROWSIZE-1);
+		  			int end=(pg*ROWSIZE);
+		  			int allPage=0;
+		  			int startPage = ((pg-1)/BLOCK*BLOCK)+1; // 시작블럭숫자 (1~5페이지일경우 1, 6~10일경우 6)
+		  			int endPage = ((pg-1)/BLOCK*BLOCK)+BLOCK; // 끝 블럭 숫자 (1~5일 경우 5, 6~10일경우 10)
+		  			int total=0;
+		  		%>
 				<div class="row">
 				<%
 					int id=0;
@@ -93,12 +100,23 @@
 					PreparedStatement pstmt=null;
 					ResultSet rs=null;
 					String sql="";
+					
+					sql="select count(*) as cnt from attraction";
+					rs=DB.getResult(sql);
+					while(rs.next()){
+						total=rs.getInt("cnt");
+					}
+					rs.close();
+					allPage=(int)Math.ceil(total/(double)ROWSIZE);
+					if(endPage>allPage){
+						endPage=allPage;
+					}
 					if(request.getParameter("num")!=null){
 						num=Integer.parseInt(request.getParameter("num"));
 						sql="select a.name, a.img, a.station, s.line, a.id from attraction a, station2 s, subwayLine l , theme t where a.station=s.name and s.line=l.line_num and a.theme=t.theme_name and t.id="+num+" order by a.name";
 					}
 					else{
-						sql="select a.name, a.img, a.station, s.line, a.id from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num order by a.name";
+						sql="select a.name, a.img, a.station, s.line, a.id from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num and (id>= "+start+" and id <= "+end+") order by a.name";
 					}
 					rs=DB.getResult(sql);
 					if(rs==null){
@@ -107,13 +125,11 @@
 					else{
 						while(rs.next()){
 							name=rs.getString("name");
-							System.out.println(name);
 							station=rs.getString("station");
 							img=rs.getString("img");
 							line=rs.getString("line");
 							id=Integer.parseInt(rs.getString("id"));
 						%>				
-							<!-- DB에서 불러오기 -->
 							<!-- DB에서 불러오기 -->
 							<div class="col-md-6 col-sm-12 col-xs-12">
 		                        <div class="grid center-block">
@@ -129,7 +145,49 @@
 		                        </div>
 		                    </div>
 						<% } %>					
-					<%} %>					
+					<%} %>		
+					<%if (num==0){%>
+						<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						  <tr><td colspan="4" height="5"></td></tr>
+						  <tr>
+							<td align="center">
+								<%
+									if(pg>BLOCK) {
+								%>
+									[<a href="theme.jsp?pg=1">◀◀</a>]
+									[<a href="theme.jsp?pg=<%=startPage-1%>">◀</a>]
+								<%
+									}
+								%>
+								
+								<%
+									for(int i=startPage; i<= endPage; i++){
+										if(i==pg){
+								%>
+											<u><b>[<%=i %>]</b></u>
+								<%
+										}else{
+								%>
+											<a href="theme.jsp?pg=<%=i %>">[<%=i %>]</a>
+								<%
+										}
+									}
+								%>
+								
+								<%
+									if(endPage<allPage){
+								%>
+									[<a href="theme.jsp?pg=<%=endPage+1%>">▶</a>]
+									[<a href="theme.jsp?pg=<%=allPage%>">▶▶</a>]
+								<%
+									}
+								%>
+								</td>
+								</tr>
+								  <tr align="center">
+						  </tr> 
+						</table>
+					<%}else{ }%>			
 				</div>
 			</div>
 		</div>
