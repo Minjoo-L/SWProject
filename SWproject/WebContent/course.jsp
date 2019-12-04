@@ -19,6 +19,7 @@
 
         <!-- Add custom CSS here -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
@@ -88,7 +89,7 @@
                         <div class="grid center-block">
                         <a href="course_details.jsp?id=<%=id %>">
                             <figure class="effect-zoe">
-                                <img src=<%=imgUrl %> class="img-responsive center-block"  style="width:800px;height:400px;">
+                                <img src=<%=imgUrl %> class="img-responsive center-block">
                                 <figcaption>
                                     <h2><%=c_name %></h2>
                                     <p class="description">

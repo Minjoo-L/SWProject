@@ -29,6 +29,7 @@
         <!-- Side Menu -->
          <ul class="menubar">
      		 <li class="h"><a class="h" href="main.jsp"><b>FestivalMetro</b></a></li>
+      		<li class="h"><a class="h" href="main.jsp">Home</a>
       		<li class="h"><a class="h" href="line.jsp">호선별 즐길거리</a></li>
       		 <li class="h"><a class="h" href="theme.jsp">테마별 즐길거리</a></li>
       		<li class="h"><a class="h" href="course.jsp">추천코스</a></li>
