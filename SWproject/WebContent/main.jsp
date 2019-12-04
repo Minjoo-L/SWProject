@@ -20,38 +20,13 @@
     </head>
 
     <body>
-
-        <!-- Side Menu -->
-        <div id="sidebar">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="main.jsp">Festival Metro</a>
-                    <hr>
-                </li>
-                <li>
-                    <a href="main.jsp">Home</a>
-                </li>
-                <li>
-                    <a href="line.jsp">호선별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="theme.jsp">테마별 즐길거리</a>
-                </li>
-                <li>
-                    <a href="course.jsp">추천 코스</a>
-                </li>
-                <li>
-                    <a href="contact.jsp">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /Side Menu -->
+        <%@ include file="sidemenubar.jsp"%>
 
         <!-- Full Page Image Header Area -->
         <div id="top" class="header">
             <div class="vert-text parallax">
 			
-                <h1 class="header-text">Festival Metro</h1>
+                <h1 style = "color: white">Festival Metro</h1>
                 <h3 class="header-text">
                     <em class="header-text">So we are here to guide your metro travel</em>
                 </h3><br />
