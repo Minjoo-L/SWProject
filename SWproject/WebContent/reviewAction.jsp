@@ -36,6 +36,7 @@
 	System.out.println("user id는"+user_id);
 	Timestamp time = new Timestamp(System.currentTimeMillis());
 	String referer = request.getHeader("referer");
+	System.out.println(referer);
 	
 	
 
@@ -46,11 +47,11 @@
 	pstmt.setString(2, posting_title);
 	rs = pstmt.executeQuery();
 	if(rs.isBeforeFirst()){
-		System.out.println("조회된데이 있음  ");
+		System.out.println("조회된데이터 있음  ");
 		%>
 	<script>
 	alert('이미 후기를 작성한 글입니다.'); 
-	location.href=history.back();
+	location.href="<%= referer %>";
 	</script>
 	<%
 	}
