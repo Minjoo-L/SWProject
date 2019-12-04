@@ -13,7 +13,7 @@ License URI:http://www.gnu.org/licenses/gpl-2.0.html
 
 /* latin-ext */
 @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
-@font-face { font-family: 'BinggraeMelona'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'BinggraeMelona'; src: url('../font-awesome/fonts/BinggraeMelona.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 html,
 body {

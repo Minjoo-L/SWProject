@@ -15,7 +15,7 @@
         <link href="css/bootstrap.css" rel="stylesheet">
 
         <!-- Add custom CSS here -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="css/opening.css">
         <link href="css/style.css" rel="stylesheet">
     </head>
 
