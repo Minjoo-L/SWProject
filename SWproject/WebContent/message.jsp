@@ -105,8 +105,16 @@ input[type="password"] {
 	<%
 		request.setCharacterEncoding("utf-8");
 		String receiver = request.getParameter("user_id");
-		String referer = request.getHeader("referer");
-		%>
+        String referer = request.getHeader("referer");
+        String login_user = (String)session.getAttribute("user_id");
+		
+		if(login_user == null){
+            %>
+            <script>
+                alert("로그인을 해주세요 ");
+                location.href = 'login.jsp';
+            </script>
+            <%} %>
 
 	<section class="page-title bg-2">
 		<div class="container">
