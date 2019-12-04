@@ -12,11 +12,11 @@
 <body>
 <%
       
-      	//formÀ¸·ÎºÎÅÍ ³Ñ¾î¿Â °ª
+      	//formï¿½ì‡°ï¿½éºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ëŒï¿½ï¿½ åª›ï¿½ 
       	String u_id=request.getParameter("user_id");
 		String u_pwd=request.getParameter("user_pwd");
 		
-		//µğºñ¿¡¼­ °Ë»öÇÑ °ª
+		//ï¿½ï¿½é®ï¿½ï¿½ï¿½ï¿½ï¿½ å¯ƒï¿½ï¿½ï¿½ï¿½ï¿½ åª›ï¿½ 
 		String id="";
 		String pwd="";
 		
@@ -30,28 +30,36 @@
 		
 		
 		while(rs.next())
-		{//µğºñ¿¡¼­ °¡Á®¿Â id,pwd
+		{// ï¿½ï¿½é®ï¿½ï¿½ï¿½ï¿½ï¿½ åª›ï¿½ï¿½ëª„ï¿½ï¿½ id, pwd 
 			id=rs.getString("user_id");
 			pwd=rs.getString("user_pwd");
 		}
 		
 		
-		//ÀÔ·Â¹ŞÀº id¿Í ºñ¹Ğ¹øÈ£°¡ µ¥ÀÌÅÍº£ÀÌ½º³»ÀÇ id¿Í °°´Ù¸é
+		//ï¿½ï¿½ï¿½ï¿½ è«›ï¿½ï¿½ï¿½ idï¿½ï¿½ é®ï¿½è«›ï¿½è¸°ï¿½ï¿½ë©¸ï¿½ ï¿½ê³—ï¿½ëŒ„ï¿½ê³•ï¿½ï¿½ëŒï¿½ã…»ï¿½ëŒï¿½ï¿½ idï¿½ï¿½ åª›ï¿½ï¿½ï¿½
 		if(id.equals(u_id) && pwd.equals(u_pwd))
 		{
-			//¼¼¼ÇÀ¯Áö
+			//ï¿½ëª„ï¿½ï¿½ï¿½ï¿½ï§ï¿½ 
 			session.setAttribute("user_id",u_id);  
 			session.setAttribute("user_pwd",u_pwd); 
 			
-			//»ç¿ëÀÚ°¡ °ü¸®ÀÚ¶ó¸é °ü¸®ÀÚ ÆäÀÌÁö·Î ÀÌµ¿
+			//ï¿½ÑŠï¿½â‘¹ï¿½ï¿½åª›ï¿½ æ„¿ï¿½ç”±ÑŠï¿½ï¿½ï¿½ì‡°ãˆƒ æ„¿ï¿½ç”±ÑŠï¿½ï¿½ ï¿½ï¿½ï¿½ëŒï¿½æ¿¡ï¿½ ï¿½ëŒ€ï¿½ï¿½ 
 			if(u_id.equals("admin") && u_pwd.equals("admin"))
-				response.sendRedirect("main.jsp");//main.jsÆäÀÌÁö·Î ÀÌµ¿			
+			{
+				response.sendRedirect("main.jsp");
+			}
+			else
+			{
+				response.sendRedirect("main.jsp");//main.jsp ï¿½ï¿½ï¿½ëŒï¿½æ¿¡ï¿½ ï¿½ëŒ€ï¿½ï¿½ 
+			}
+			
+			
 		}
 		else
 		{
-			response.sendRedirect("main.jsp");//main.jsÆäÀÌÁö·Î ÀÌµ¿
+			response.sendRedirect("main.jsp");//main.jsï¿½ï¿½ï¿½ëŒï¿½æ¿¡ï¿½ ï¿½ëŒ€ï¿½ï¿½ 
 			//out.println("<script>");
-			//out.println("alert('¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä!')");
+			//out.println("alert('ï¿½ï¿½ï¿½ëŒ€ï¿½ï¿½ï¿½ï¿½ é®ï¿½è«›ï¿½è¸°ï¿½ï¿½ëªƒï¿½ï¿½ ï¿½ï¿½ï¿½ëª…ï¿½ï¿½ äºŒì‡±ï¿½ëª„ï¿½ï¿½! ')");
 			//out.println("</script>");
 		}
 		
