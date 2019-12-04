@@ -22,7 +22,7 @@
        
     </head>
 
-    <body>
+    <body class="webFont">
         
         <%@ include file = "sidemenubar.jsp" %>
         <%

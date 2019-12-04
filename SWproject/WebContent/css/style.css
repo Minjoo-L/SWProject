@@ -11,11 +11,73 @@ License URI:http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Global Styles */
 
+/* latin-ext */
+@import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+@font-face { font-family: 'BinggraeMelona'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 html,
 body {
   height: 100%;
   width: 100%;
+  font-family: 'BinggraeMelona', sans-serif;
 }
+
+
+.webFont{
+  font-family: 'BinggraeMelona', sans-serif;
+}
+
+h1 {
+ font-size:5em;
+ font:bold 7.5vw/1.6 'Signika', sans-serif;
+ -webkit-user-select:none;
+    -moz-user-select:none;
+     -ms-user-select:none;
+         user-select:none;
+}
+
+h1 span { display:inline-block; -webkit-animation:float .2s ease-in-out infinite; animation:float .2s ease-in-out infinite; }
+ @-webkit-keyframes float {
+  0%,100%{ -webkit-transform:none; transform:none; }
+  33%{ -webkit-transform:translateY(-1px) rotate(-2deg); transform:translateY(-1px) rotate(-2deg); }
+  66%{ -webkit-transform:translateY(1px) rotate(2deg); transform:translateY(1px) rotate(2deg); }
+}
+ @keyframes float {
+  0%,100%{ -webkit-transform:none; transform:none; }
+  33%{ -webkit-transform:translateY(-1px) rotate(-2deg); transform:translateY(-1px) rotate(-2deg); }
+  66%{ -webkit-transform:translateY(1px) rotate(2deg); transform:translateY(1px) rotate(2deg); }
+}
+body:hover span { -webkit-animation:bounce .6s; animation:bounce .6s; }
+@-webkit-keyframes bounce {
+  0%,100%{ -webkit-transform:translate(0); transform:translate(0); }
+  25%{ -webkit-transform:rotateX(20deg) translateY(2px) rotate(-3deg); transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ -webkit-transform:translateY(-20px) rotate(3deg) scale(1.1); transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+@keyframes bounce {
+  0%,100%{ -webkit-transform:translate(0); transform:translate(0); }
+  25%{ -webkit-transform:rotateX(20deg) translateY(2px) rotate(-3deg); transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ -webkit-transform:translateY(-20px) rotate(3deg) scale(1.1); transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ -webkit-animation-delay:.05s; animation-delay:.05s; }
+h1 span:nth-child(3){ -webkit-animation-delay:.1s; animation-delay:.1s; }
+h1 span:nth-child(4){ -webkit-animation-delay:.15s; animation-delay:.15s; }
+h1 span:nth-child(5){ -webkit-animation-delay:.2s; animation-delay:.2s; }
+h1 span:nth-child(6){ -webkit-animation-delay:.25s; animation-delay:.25s; }
+h1 span:nth-child(7){ -webkit-animation-delay:.3s; animation-delay:.3s; }
+h1 span:nth-child(8){ -webkit-animation-delay:.35s; animation-delay:.35s; }
+h1 span:nth-child(9){ -webkit-animation-delay:.4s; animation-delay:.4s; }
+h1 span:nth-child(10){ -webkit-animation-delay:.45s; animation-delay:.45s; }
+h1 span:nth-child(11){ -webkit-animation-delay:.5s; animation-delay:.5s; }
+h1 span:nth-child(12){ -webkit-animation-delay:.55s; animation-delay:.55s; }
+h1 span:nth-child(13){ -webkit-animation-delay:.6s; animation-delay:.6s; }
+h1 span:nth-child(14){ -webkit-animation-delay:.65s; animation-delay:.65s; }
+
 input[type="submit"]{
   background-color: #28B4B4;
   border: none;
@@ -117,11 +179,9 @@ border-radius: 4px;
   text-align: center;
 }
 .main-title{
-  font-family: 'Lobster', cursive;
   font-size: 45px;
 }
 #about{
-  font-family: "Lato";
   margin: 50px 0px;
 }
 #about p {
@@ -150,7 +210,6 @@ ol.color {
 }
 
 .vert-text h1 {
-  font-family: 'Lobster', cursive;
   padding: 0;
   margin: 0;
   font-size: 4.5em;
@@ -158,7 +217,6 @@ ol.color {
   text-shadow: 2px 2px rgba(156, 190, 200, 1);
 }
 h1.header-text {
-  font-family: 'Lobster', cursive;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
   margin-top: 140px;
   color: white;
@@ -885,7 +943,7 @@ figure.effect-zoe:hover p.icon-links a:first-child {
     color:    #727272;
   }
 
-///////////Àá±ñ ÁÖ¼®Ã³¸®
+///////////ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½Ã³ï¿½ï¿½
 /* Footer */
 
 footer {
@@ -993,15 +1051,7 @@ i.scroll:hover {
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
 @import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
-body {
-  line-height: 1.5;
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
-}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -1026,7 +1076,6 @@ h4 {
 p {
   color: #7B7B7B;
   font-size: 15px;
-  font-family: "Roboto", sans-serif;
 }
 
 ol, ul {
@@ -1254,7 +1303,6 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 .section-title p {
   font-style: italic;
   color: #666;
-  font-family: "Volkhov", serif;
 }
 
 .section-subtitle {
@@ -1399,7 +1447,6 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 
 .commonSelect:before {
   content: '\f3d0';
-  font-family: "themefisher-font";
   position: absolute;
   right: -4px;
   top: 4px;
@@ -1478,7 +1525,6 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   content: "\f209";
   position: absolute;
   right: 25px;
-  font-family: "themefisher-font";
 }
 
 .commonAccordion .panel .panel-title a.collapsed:before, .commonAccordion-2 .panel .panel-title a.collapsed:before {
@@ -2017,7 +2063,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .testimonial .testimonial-carousel p {
-  font-family: "Volkhov", serif;
+  
   line-height: 28px;
   padding-bottom: 20px;
 }
@@ -2030,7 +2076,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .testimonial .testimonial-carousel .user p {
-  font-family: "Roboto", sans-serif;
+  
   padding-bottom: 0;
   margin-top: 6px;
   font-size: 12px;
@@ -3725,3 +3771,5 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+/*# main text style*/

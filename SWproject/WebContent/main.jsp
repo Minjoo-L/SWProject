@@ -15,6 +15,7 @@
         <link href="css/bootstrap.css" rel="stylesheet">
 
         <!-- Add custom CSS here -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     </head>
@@ -26,10 +27,8 @@
         <div id="top" class="header">
             <div class="vert-text parallax">
 			
-                <h1 style = "color: white">Festival Metro</h1>
-                <h3 class="header-text">
-                    <em class="header-text">So we are here to guide your metro travel</em>
-                </h3><br />
+                <h1><span>F</span><span>e</span><span>s</span><span>t</span><span>i</span><span>v</span><span>a</span><span>l</span><span>&nbsp;</span><span>M</span><span>e</span><span>t</span><span>r</span><span>o</span></h1>
+                <br />
 				<!--추가시작-->
 				
 				<%//세션에서 id와 nickname가져옴
@@ -53,6 +52,7 @@
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     </body>
 </html>
