@@ -8,10 +8,6 @@
 	int id = Integer.parseInt(request.getParameter("id"));
 	String c_name = request.getParameter("c_name");
 	String kind = request.getParameter("kind");
-	
-	//System.out.println("id는 "+id);
-	//System.out.println("c_nam은 "+c_name);
-	%>
 	<form method="post" action="reviewAction.jsp" id="form" role="form">
 		<div class="row">
 			<div class="col-md-6 form-group">

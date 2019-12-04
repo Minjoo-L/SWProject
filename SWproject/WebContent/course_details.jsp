@@ -19,27 +19,7 @@
         <!-- Add custom CSS here -->
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<style>
-.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-}
-    footer{
-	background-color:#E8F5FF;
-	}
-	
-</style>
+       
     </head>
 
     <body>
@@ -218,36 +198,6 @@
             </div>
 		</div>
 	</section>
-        
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-facebook"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-dribbble"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-pinterest"></i>
-                            </li>
-                        </ul>
-                        <hr>
-                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
-                        <div class="top-scroll">
-                            <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /Footer -->
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>

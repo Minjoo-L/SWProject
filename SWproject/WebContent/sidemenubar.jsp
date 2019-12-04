@@ -44,9 +44,6 @@
                 <%
                 }else{
                 %>
-                <li>
-                    <a href="contact.jsp">Contact</a>
-                </li>
                 <%} %>
             </ul>
 

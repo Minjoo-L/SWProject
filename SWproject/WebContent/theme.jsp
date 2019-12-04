@@ -19,30 +19,7 @@
         <!-- Add custom CSS here -->
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<style>
-		.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-		.btn2{
-  background-color: white;
-  border: none;
-  color: black;
-  font-size: 20px;
-  height:38px;
-	}
-</style>
+ 
     </head>
 
     <body>
@@ -50,12 +27,7 @@
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
-				<table width="100%">
-						<tr>
-							<td><p algn="left"><a href="line.jsp"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="course.jsp"><button type="button" class="btn1">next</button></a></p></td>
-						</tr>
-					</table>
+				
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 text-center">
                         <h2 class="main-title">테마별 즐길거리</h2>

@@ -17,26 +17,6 @@
         <!-- Add custom CSS here -->
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<style>
-	.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-    footer{
-	background-color:#E8F5FF;
-	}
-</style>
     </head>
 
     <body>
@@ -44,12 +24,6 @@
         <%@ include file = "sidemenubar.jsp" %>
         <!-- Contact Section -->
         <div id="contact" class="container parallax">
-			<table width="100%">
-						<tr>
-							<td><p algn="left"><a href="/course"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="/contact"><button type="button" class="btn1">next</button></a></p></td>
-						</tr>
-					</table>
             <div class="col-md-4 col-md-offset-4 text-center">
 				
                 <h2 class="main-title">Send Messages</h2>
@@ -97,42 +71,6 @@
                 </div><!-- End Contact Form Area -->
             </div><!-- End Inner -->
         </div><!-- End Contact Section -->
-        
-        <div class="map">
-            <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3618.727010735933!2d91.837871!3d24.907291700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1404919738144"></iframe>
-        </div>
-        <!-- /Map -->
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-facebook"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-dribbble"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-pinterest"></i>
-                            </li>
-                        </ul>
-                        <hr>
-                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
-                        <div class="top-scroll">
-                            <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /Footer -->
-
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>

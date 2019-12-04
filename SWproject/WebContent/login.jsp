@@ -19,60 +19,7 @@
         <!-- Add custom CSS here -->
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
-		<!-- 추가한부분-->
-		  <link rel="stylesheet" href="style1.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-input[type="submit"]{
-  background-color: #28B4B4;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius:10px;
-  width:260px;
-  height:38px;
-}
-	footer{
-	background-color:#E8F5FF;
-	}
-    .box{
-        position:center;
-        top:0;left:0;bottom:0;right:0;
-        height:10%;
-        margin:15% auto;
-        text-align:center;
-    }
-    input[type="text"]{
-            border:none;
-            border-bottom:2px solid #0A9696;
-        }
-    input[type="password"]{
-            border:none;
-            border-bottom:2px solid #0A9696;
-    }
-		.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-</style>
 </head>
 <body>
     <%@ include file = "sidemenubar.jsp" %>
@@ -80,15 +27,6 @@ input[type="submit"]{
         <div id="about">
             <div class="light-wrapper">
                 <div class="container inner">
-					<br><br>
-					<table width="100%">
-						<tr>
-							<td><p algn="left"><a href="main.jsp"><button type="button" class="btn1">before</button></a></p></td>
-							
-						</tr>
-					</table>
-					
-					
                     <div class="row">
                         <div class="text-center">
                             <h2 class="main-title">Login</h2>
@@ -101,14 +39,8 @@ input[type="submit"]{
         비밀번호  &nbsp<input type="password" name="user_pwd"><br/>
         <br><br>
         <input type="submit" value="로그인">
-      </form>
-      
-		
+      </form>		
 	</div>	
-    
-    
-
-                        
                       </div>
                       <!-- /.row --> 
                       
@@ -118,36 +50,6 @@ input[type="submit"]{
                   <!-- /.light-wrapper -->
                 </div>
         <!-- /Intro -->
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-facebook"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-dribbble"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-pinterest"></i>
-                            </li>
-                        </ul>
-                        <hr>
-                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject">software_project 세일러문조</a>  2019</p>
-                        <div class="top-scroll">
-                            <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /Footer -->
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>

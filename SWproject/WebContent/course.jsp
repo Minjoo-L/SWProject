@@ -20,26 +20,7 @@
         <!-- Add custom CSS here -->
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<style>
-		.btn1{
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius:10px;
-  width:30px;
-  height:38px;
-	}
-    footer{
-	background-color:#E8F5FF;
-	}
-</style>
+
 </head>
 
     <body>
@@ -56,12 +37,6 @@
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
-				<table width="100%">
-						<tr>
-							<td><p algn="left"><a href="theme.jsp"><button type="button" class="btn1">before</button></a></p></td>
-							<td><p align="right"><a href="contact.jsp"><button type="button" class="btn1">next</button></a></p></td>
-						</tr>
-				</table>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 text-center">
                         <h2 class="main-title">추천 코스</h2>
@@ -169,25 +144,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <ul class="list-inline">
-                           
-                        </ul>
-                        <hr>
-                        <p>Copyright &copy; <a href="https://github.com/Minjoo-L/SWProject"><font color=black>software_project 세일러문조</font></a>  2019</p>
-                        <div class="top-scroll">
-                            <a href="#top"><i class="fa fa-arrow-circle-up scroll"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /Footer -->
         <!-- JavaScript -->
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>
