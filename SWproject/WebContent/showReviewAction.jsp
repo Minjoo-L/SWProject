@@ -22,7 +22,6 @@
 
 				<!-- Add custom CSS here -->
 				<link href="css/style.css" rel="stylesheet">
-				<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 				 <!-- bootstrap.min css -->
 		  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
 		  <!-- Ionic Icon Css -->
