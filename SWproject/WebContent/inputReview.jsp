@@ -8,6 +8,7 @@
 	int id = Integer.parseInt(request.getParameter("id"));
 	String c_name = request.getParameter("c_name");
 	String kind = request.getParameter("kind");
+%>
 	<form method="post" action="reviewAction.jsp" id="form" role="form">
 		<div class="row">
 			<div class="col-md-6 form-group">
@@ -24,8 +25,7 @@
 			</div>
 			<!-- Comment -->
 			<div class="form-group col-md-12">
-				<textarea name="review" id="review" class=" form-control" rows="6"
-					placeholder="Comment" maxlength="400"></textarea>
+				<textarea name="review" id="review" class=" form-control" rows="6" placeholder="Comment" maxlength="400"></textarea>
 			</div>
 
 			<!-- Send Button -->

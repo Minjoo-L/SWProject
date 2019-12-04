@@ -80,10 +80,6 @@
 				<option><%= rs.getString("name")%></option>
 			<%	} %>
 			</select>
-				<!-- 장소이름 <input type="text" name="place_name1"><br><br>
-				사진 src<input type="text" name="img_src1" ><br><br>
-				설명<br> <textarea name="explanation1" cols="40" rows="5"></textarea> -->
-				
 			</td>
 			<td>
 			<h3>코스내 <big>두</big>번째 장소</h3>
@@ -96,11 +92,6 @@
 				<option><%= rs.getString("name")%></option>
 			<%	} %>
 			</select>
-  			<!-- 
-				장소이름 <input type="text" name="place_name3"><br><br>
-				사진 src<input type="text" name="img_src3"><br><br>
-				설명 <textarea name="explanation3" cols="40" rows="5"></textarea>
-				 -->
 			</td>
 		
 			<td><h3>코스내 <big>세</big>번째 장소</h3>
@@ -113,10 +104,6 @@
 				<option><%= rs.getString("name")%></option>
 			<%	} %>
 			</select>
-				<!--  
-				장소이름 <input type="text" name="place_name2"><br><br>
-				사진 src<input type="text" name="img_src2"><br><br>
-				설명 <textarea name="explanation2" cols="40" rows="5"></textarea>-->
 			</td>
 			<td><h3>코스내 <big>네</big>번째 장소</h3>
 			<%	rs=null;
@@ -128,9 +115,6 @@
 				<option><%= rs.getString("name")%></option>
 			<%	} %>
 			</select>
-				<!--  장소이름 <input type="text" name="place_name4"><br><br>
-				사진 src<input type="text" name="img_src4"><br><br>
-				설명 <textarea name="explanation4" cols="40" rows="5"></textarea>-->
 			</td>
 		</tr>
 	</table>
@@ -138,10 +122,6 @@
     <input type="submit" value="course add">
    			
 		</form>
-		
-		
-	
-    
     </div>                  
                       </div>
                       <!-- /.row --> 
@@ -158,50 +138,5 @@
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
 
-        <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
-        <script>
-        $("#menu-close").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-        </script>
-        <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-        </script>
-        <script>
-        $(function() {
-            $('a[href*=#]:not([href=#])').click(function() {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        });
-        </script>
-
-        <!-- modal -->
-
-        <script>
-
-            $('.modal').on('shown.bs.modal', function () {
-                var curModal = this;
-                $('.modal').each(function(){
-                    if(this != curModal){
-                        $(this).modal('hide');
-                    }
-                });
-            });
-
-        </script>   
 </body>
 </html>

@@ -21,7 +21,6 @@
 	String user_id = request.getParameter("user_id");
 	String time = request.getParameter("time");
 	String referer = request.getHeader("referer");
-	//System.out.println(referer);
 	
 	// 사용자 아이디와 시간으로 삭제 
 	String sql = "delete from review_test where user_id=? and time = ?";
