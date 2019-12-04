@@ -37,7 +37,14 @@
 	Timestamp time = new Timestamp(System.currentTimeMillis());
 	String referer = request.getHeader("referer");
 	System.out.println(referer);
-	
+	if (content == ""){
+		%>
+		<script>
+			alert("내용을 작성 해주세요!");
+			location.href = "<%=referer%>";
+		</script>
+		<% 
+		}
 	
 
 	//후기 작성했는지 확인 
