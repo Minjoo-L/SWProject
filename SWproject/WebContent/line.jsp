@@ -29,6 +29,9 @@
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 text-center">
                         <h2 class="main-title">호선별 즐길거리</h2>
+                        <% if(request.getParameter("num")==null){ %>
+                        <p>전체 호선</p>
+                        <%}else{ %><p><%=request.getParameter("num") %>호선</p><%} %>
                         <hr>
                     </div>
                 </div>

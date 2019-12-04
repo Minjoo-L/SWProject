@@ -21,6 +21,23 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
+<style>
+	select {
+width: 200px;
+padding: .8em .5em;
+border: 1px solid #999;
+font-family: inherit;
+background: url('arrow.jpg') no-repeat 95% 50%;
+border-radius: 0px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+</style>
 <body>
   <%@ include file = "sidemenubar.jsp" %>
         <!-- Intro -->
@@ -29,7 +46,7 @@
                 <div class="container inner">		
                     <div class="row">
                         <div class="text-center">
-                            <h2 class="main-title">AddCourses</h2>
+                            <h2 class="main-title">코스 추가</h2>
                             <hr>
                         </div>
 						
@@ -71,8 +88,6 @@
 		  <br>
     		<br><br>
   			</label>
-  			
-   			<br><br><br><br><br>
    			<table width="100%" height="100%">
 		<tr>
 			<td>
@@ -121,8 +136,8 @@
 			</td>
 		</tr>
 	</table>
-						 <br><br><br><br><br><br>
-    <input type="submit" value="course add">
+						 <br><br><br>
+    <input type="submit" value="코스 추가">
    			
 		</form>
 	</div><!--end of box2-->

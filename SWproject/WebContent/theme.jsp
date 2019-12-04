@@ -26,10 +26,14 @@
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
-				
-                <div class="row">
+				<%String[] theme_arr=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
+				%>
+                <div class="row"> 
                     <div class="col-md-4 col-md-offset-4 text-center">
                         <h2 class="main-title">테마별 즐길거리</h2>
+                        <% if(request.getParameter("num")==null){ %>
+                        <p>전체 테마</p>
+                        <%}else{ %><p><%=theme_arr[Integer.parseInt(request.getParameter("num"))] %></p><%} %>
                         <hr>
                     </div>
                 </div>
@@ -40,7 +44,6 @@
 					<tr>
 						<td><button type="button" class="btn2" onclick="location.href='line.jsp'">전체</button></td>	
 						<% 
-						String[] theme_arr=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
 						for(int i=0;i<9;i++){ %>
 						<td><button type="button" class="btn2" onclick="location.href='theme.jsp?num=<%=i%>'"><%=theme_arr[i]%></button></td>
 						<%}%>				
