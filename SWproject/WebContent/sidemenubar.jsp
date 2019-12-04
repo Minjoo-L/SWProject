@@ -34,6 +34,7 @@
       		<li class="h"><a class="h" href="course.jsp">추천코스</a></li>
              <% if("admin".equals(userid) && userid != null){%>
              <li class = "h"><a class="h"  href="addCourses.jsp">코스 추가 </a></li>
+             <li class = "h"><a class="h"  href="deleteCourses.jsp">코스 삭제</a></li>
              <li class = "h"><a class = "h" href="deleteReview.jsp">후기 삭제  </a></li>
              <% } 
                 if(userid == null){%>
