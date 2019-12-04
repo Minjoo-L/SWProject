@@ -49,7 +49,7 @@
 		}
 		
 		%>
-		
+		<div id="box2">
 		<form action="addCourses_verify.jsp" method="post">
 		
 			
@@ -122,6 +122,7 @@
     <input type="submit" value="course add">
    			
 		</form>
+	</div><!--end of box2-->
     </div>                  
                       </div>
                       <!-- /.row --> 

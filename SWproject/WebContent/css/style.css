@@ -64,6 +64,11 @@ input[type="submit"]{
   font-size: 20px;
   height:38px;
 	}
+#box2{
+	margin:0 auto;
+	text-align:center;
+}
+	
 .retina{
   margin: 0;
   float: left;
