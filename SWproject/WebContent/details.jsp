@@ -113,6 +113,9 @@
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 									<div class=" from-group col-md-12">
+										<%
+											if(login_user.equals(user_id) && login_user != ""){
+										%>
 									<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
 
 										<%
@@ -137,13 +140,40 @@
 											/
 											<%=tt %>]
 										</h5>
-										<hr width="100%">
 										<input type="hidden" name = "time" value = "<%=time%>"/>
 										<input type="hidden" name = "user_id" value = "<%=user_id %>"/>
 										</form>
-									</div>
-								</div>
+										<%
+										}else{
+										%>
+									<form method="post" action="message.jsp" id="form" role="form">										
+									<p>
+									
+											평점: &nbsp
+											<%= score %></p>
+										<p>
+											내용:
+											<%=content%>
+										</p>
+										
+										<h5>작성자: &nbsp<%=user_id %> <button type="submit" 
+											>쪽지 보내기 </button></h5>
+										<h5>
+											&nbsp[<%=date%>
+											/
+											<%=tt %>]
+										</h5>
+										
+										
+										<%} %>
+										<input type="hidden" name = "time" value = "<%=time%>"/>
+										<input type="hidden" name = "user_id" value = "<%=user_id %>"/>
+										
+										</form>
+										</div>
+										</div>
 								<% } %>
+								<hr width="100%">
 							</div>
 						</div>
 						<jsp:include page="inputReview.jsp">
