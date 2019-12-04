@@ -73,9 +73,9 @@
             <div class="container">
 				<table width = "100%">
 					<tr>
-						<td><button type="button" class="btn2" onclick="location.href='paging_test.jsp'">전체</button></td>	
+						<td><button type="button" class="btn2" onclick="location.href='line.jsp'">전체</button></td>	
 						<% for(int i=1;i<=9;i++){ %>
-						<td><button type="button" class="btn2" onclick="location.href='paging_test.jsp?num=<%=i%>'">#<%=i %>호선</button></td>
+						<td><button type="button" class="btn2" onclick="location.href='line.jsp?num=<%=i%>'">#<%=i %>호선</button></td>
 						<%}%>				
 					</tr>
 				</table>
