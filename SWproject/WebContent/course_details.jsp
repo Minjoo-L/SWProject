@@ -157,7 +157,7 @@
                         <div class="row">
                             <%
                             
-                            sql = "select * from review_test where kind = 'attraction' and posting_id = "+id;
+                            sql = "select * from review_test where kind = 'courses' and posting_id = "+id;
                             rs =DB.getResult(sql);
                             if (!rs.isBeforeFirst()){
                             %>
@@ -212,7 +212,7 @@
                     <jsp:include page="inputReview.jsp">
                         <jsp:param name="c_name" value="<%=c_name %>" />
                         <jsp:param name="id" value="<%=id %>" />
-                        <jsp:param name="kind" value="attraction" />
+                        <jsp:param name="kind" value="courses" />
                     </jsp:include>
                 </div>
             </div>
@@ -252,24 +252,39 @@
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARcEHteaJgu_O31yzWXJsj_43ncEZaZcI&callback=initMap">
 			</script>
         <script >
         function initMap() {
 			var locations = Array();
-            
-            locations.push(["<%=item[0][0]%>", <%=item[0][11]%>, <%=item[0][12]%>]);
-            locations.push(["<%=item[1][0]%>", <%=item[1][11]%>, <%=item[1][12]%>]);
-            locations.push(["<%=item[2][0]%>", <%=item[2][11]%>, <%=item[2][12]%>]);
-            locations.push(["<%=item[3][0]%>", <%=item[3][11]%>, <%=item[3][12]%>]);
-            var init_x_coord = (locations[0][1] + locations[1][1] + locations[2][1] + locations[3][1])/4;
-            var init_y_coord = (locations[0][2] + locations[1][2] + locations[2][2] + locations[3][2])/4;
-        	
+            var Coordinates = [];
+            var MarkersArray = [];
+            var travelPathArray = [];
+            var init_x_coord = 0;
+            var init_y_coord = 0;
+
+            locations = [
+                ["<%=item[0][0]%>", <%=item[0][11]%>, <%=item[0][12]%>],
+                ["<%=item[1][0]%>", <%=item[1][11]%>, <%=item[1][12]%>],
+                ["<%=item[2][0]%>", <%=item[2][11]%>, <%=item[2][12]%>],
+                ["<%=item[3][0]%>", <%=item[3][11]%>, <%=item[3][12]%>],
+            ];
+            for(var i = 0; i < locations.length; i++){
+                init_x_coord += locations[i][1];
+                init_y_coord += locations[i][2];
+                Coordinates.push({lat: locations[i][1], lng: locations[i][2]});
+            }
+            init_x_coord /= 4;
+            init_y_coord /= 4;
             var init_coord = {lat: init_x_coord, lng: init_y_coord};
             
             var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 14, center: init_coord});
+                document.getElementById('map'), {
+                    zoom: 14,
+                    center: init_coord,
+                    });
              
             var infowindow = new google.maps.InfoWindow();
             
@@ -288,6 +303,15 @@
                     }
                 })(marker, i));
             }
+            var flightPath = new google.maps.Polyline({
+                path: Coordinates,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+            flightPath.setMap(map);
+
         }</script>
         <script>
         $("#menu-close").click(function(e) {
