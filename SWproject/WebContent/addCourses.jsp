@@ -53,19 +53,22 @@
 		<form action="addCourses_verify.jsp" method="post">
 		
 			
-  			<label class="field a-field a-field_a1">
-    		<input class="field__input a-field__input" type="text" name="course_name" placeholder="e.g. 경복궁주변맛집탐방" required>
-    		<span class="a-field__label-wrap">
-      		<span class="a-field__label">추가하고싶은 코스이름</span>
-    		</span>
-    		<br><br>
-  			</label>
-  			<hr width="50%">
-  			<label class="field a-field a-field_a1">
-    		<input class="field__input a-field__input" type="text" name="course_theme" placeholder="e.g. 힐링" required>
-    		<span class="a-field__label-wrap">
-      		<span class="a-field__label">코스 테마</span>
-    		</span>
+			<br>
+			<label class="field a-field a-field_a1">
+			<span class="a-field__label">추가하고싶은 코스이름</span><br>
+		  <input class="field__input a-field__input" type="text" name="course_name" placeholder="e.g. 경복궁주변맛집탐방" required>
+		  <span class="a-field__label-wrap">
+		  <br>
+		  </span>
+		  <br><br>
+			</label>
+			<hr width="50%">
+			<label class="field a-field a-field_a1">
+			<span class="a-field__label">코스 테마</span><br>
+		  <input class="field__input a-field__input" type="text" name="course_theme" placeholder="e.g. 힐링" required>
+		  <span class="a-field__label-wrap">
+		  </span>
+		  <br>
     		<br><br>
   			</label>
   			
