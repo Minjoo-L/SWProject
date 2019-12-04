@@ -80,13 +80,13 @@
 							<p><%=contents%></p>
 							<hr>
 							<br>
-							<p>전화번호 : <%=phone_number %></p>
-							<p>주소 : <%=address%></p>
-							<p>운영시간 : <%=time%></p>
-							<p>교통  : <%=line %>호선  <%=station%>역 </p>
-							<p>휴무일 : <%=holiday%></p>
-							<p>요금  : <%=fee%></p>
-							<p>비고  : <%=etc%></p>
+							<% if(phone_number!=null && !phone_number.equals("없음")){%><p>전화번호 : <%=phone_number %></p><%} %>
+							<% if(address!=null&&!address.equals("없음")){%><p>주소 : <%=address%></p><%} %>
+							<% if(time!=null&&!time.equals("없음")){%><p>운영시간 : <%=time%></p><%} %>
+							<% if(line!=null&&!line.equals("없음")){%><p>교통  : <%=line %>호선  <%=station%>역 </p><%} %>
+							<% if(holiday!=null&&!holiday.equals("없음")){%><p>휴무일 : <%=holiday%></p><%} %>
+							<% if(fee!=null&&!fee.equals("없음")){%><p>요금  : <%=fee%></p><%} %>
+							<% if(etc!=null&&!etc.equals("없음")){%><p>비고  : <%=etc%></p><%} %>
 						</div>
 						<div class="post-comments-form">
 							<h3 class="post-sub-heading">후기</h3>

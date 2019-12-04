@@ -92,10 +92,8 @@
                         sql = "select * from attraction where name=\"";
                         extractAT = sql + attractionName[i] + "\"";
                         
-                        //System.out.println(extractAT);
                         m = DB.getResult(extractAT);
                         m.next();
-                        //System.out.println(m);
                         x = m.getInt(1);
                         for(int j = 2; j < 15; j++){
                             item[i][j-2] = m.getString(j);
@@ -105,28 +103,28 @@
 						<h2><%=item[i][0]%></h2>
 						
 						<div class="post-thumb">   <%-- img --%>
-							<img class="img-responsive" src="<%=item[i][10] %>" alt="">
+							<img class="img-responsive" src="<%=item[i][10] %>" alt="" style="width:500px; height:auto;">
 						</div>
 						<div class="post-content post-excerpt">   <%-- content --%>
 							<blockquote class="quote-post">
 								<p>상세 설명</p>
 							</blockquote>
+							<hr>
 							<p><%=item[i][4]%></p>
-							<pre>
                             <%
 						        for(int j = 1; j < 10; j++){
 							        if (j != 4 && item[i][j] != null && !item[i][j].equals("없음")){
 						            %>
-							        <%=title[j] %>&nbsp&nbsp<%=item[i][j] %>
+							        <p><%=title[j] %> : <%=item[i][j] %></p>
 						            <%
                                     }
 						        }
 						    %>
-							</pre>
                             <hr>
 						</div>
 					</div>
                     <%}%>
+                    <h2>코스</h2>
                     <div class="map" id="map" style="height :300px;">
 			        </div>
                     <br><br>
