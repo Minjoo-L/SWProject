@@ -18,23 +18,8 @@
 
 <!-- Add custom CSS here -->
 <link href="css/style.css" rel="stylesheet">
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<!-- bootstrap.min css -->
-<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Ionic Icon Css -->
-<link rel="stylesheet" href="plugins/Ionicons/css/ionicons.min.css">
-<!-- animate.css -->
-<link rel="stylesheet" href="plugins/animate-css/animate.css">
-<!-- Magnify Popup -->
-<link rel="stylesheet"
-	href="plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet"
-	href="plugins/slick-carousel/slick/slick-theme.css">
 
-<!-- Main Stylesheet -->
-<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body id="body">
 	<%@ include file="sidemenubar.jsp"%>
@@ -49,7 +34,6 @@
 			 String name="", phone_number="", address="", station="",contents="", time="", holiday="", fee="", etc="", theme="", img="", line ="";
 			 int id = Integer.parseInt(request.getParameter("id"));
 			 String sql = "select a.*, s.line from attraction a, station2 s, subwayLine l where a.station=s.name and s.line=l.line_num and a.id="+id;
-
 
 			 rs =DB.getResult(sql);
 			 
@@ -66,17 +50,15 @@
 					 theme = rs.getString("theme");
 					 img = rs.getString("img");
 					 line = rs.getString("line");
-					 }
-				 
+					 } 
 		%>
-
 	<section class="page-title bg-2">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="block">
 						<h1><%= name %></h1>
-						<p>명소와 그 이야기</p>
+						<p><%=theme %></p>
 					</div>
 				</div>
 			</div>
@@ -88,35 +70,23 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="post post-single">
-						<h2 class="post-title"><%=name%></h2>
-						<div class="post-meta">
-							<ul>
-								<li><i class="ion-calendar"></i> 테마는? <%=theme %></li>
-								<li><i class="ion-android-people"></i> 작성자는 관리자지롱</li>
-								<li><a href=""><i class="ion-pricetags"></i> 서울</a>,<a
-									href=""> TRAVEL</a>, <a href="">꺄르르륵 </a></li>
-
-							</ul>
-						</div>
 						<div class="post-thumb">
-							<img class="img-responsive" src="<%=img %>" alt="">
+							<img class="img-responsive" src="<%=img %>" alt="" align="center" width="1000" height=auto>
 						</div>
 						<div class="post-content post-excerpt">
-							<p><%=name%>
-							</p>
 							<blockquote class="quote-post">
 								<p>상세 설명</p>
 							</blockquote>
 							<p><%=contents%></p>
-							<pre>
-									전화번호 &nbsp&nbsp <%=phone_number %>
-									주소  &nbsp&nbsp <%=address%>
-									운영시간  &nbsp&nbsp <%=time%>
-									교통  &nbsp&nbsp <%=line %>호선  <%=station%>역 
-									휴무일 &nbsp&nbsp <%=holiday%>
-									요금  &nbsp&nbsp <%=fee%>
-									비고  &nbsp&nbsp <%=etc%>
-								  </pre>
+							<hr>
+							<br>
+							<% if(phone_number!=null && !phone_number.equals("없음")){%><p>전화번호 : <%=phone_number %></p><%} %>
+							<% if(address!=null&&!address.equals("없음")){%><p>주소 : <%=address%></p><%} %>
+							<% if(time!=null&&!time.equals("없음")){%><p>운영시간 : <%=time%></p><%} %>
+							<% if(line!=null&&!line.equals("없음")){%><p>교통  : <%=line %>호선  <%=station%>역 </p><%} %>
+							<% if(holiday!=null&&!holiday.equals("없음")){%><p>휴무일 : <%=holiday%></p><%} %>
+							<% if(fee!=null&&!fee.equals("없음")){%><p>요금  : <%=fee%></p><%} %>
+							<% if(etc!=null&&!etc.equals("없음")){%><p>비고  : <%=etc%></p><%} %>
 						</div>
 						<div class="post-comments-form">
 							<h3 class="post-sub-heading">후기</h3>
@@ -143,6 +113,9 @@
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 									<div class=" from-group col-md-12">
+										<%
+											if(login_user.equals(user_id) && login_user != ""){
+										%>
 									<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
 
 										<%
@@ -167,13 +140,40 @@
 											/
 											<%=tt %>]
 										</h5>
-										<hr width="100%">
 										<input type="hidden" name = "time" value = "<%=time%>"/>
 										<input type="hidden" name = "user_id" value = "<%=user_id %>"/>
 										</form>
-									</div>
-								</div>
+										<%
+										}else{
+										%>
+									<form method="post" action="message.jsp" id="form" role="form">										
+									<p>
+									
+											평점: &nbsp
+											<%= score %></p>
+										<p>
+											내용:
+											<%=content%>
+										</p>
+										
+										<h5>작성자: &nbsp<%=user_id %> <button type="submit" 
+											>쪽지 보내기 </button></h5>
+										<h5>
+											&nbsp[<%=date%>
+											/
+											<%=tt %>]
+										</h5>
+										
+										
+										<%} %>
+										<input type="hidden" name = "time" value = "<%=time%>"/>
+										<input type="hidden" name = "user_id" value = "<%=user_id %>"/>
+										
+										</form>
+										</div>
+										</div>
 								<% } %>
+								<hr width="100%">
 							</div>
 						</div>
 						<jsp:include page="inputReview.jsp">

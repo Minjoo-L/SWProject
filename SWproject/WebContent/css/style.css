@@ -125,11 +125,17 @@ input[type="submit"]{
   color: black;
   font-size: 20px;
   height:38px;
+  cursor:pointer;
 	}
-#box2{
+.btn2:hover{
+	background-color:blue;
+	color:white;
+}
+	#box2{
 	margin:0 auto;
 	text-align:center;
-}
+	}
+
 	
 .retina{
   margin: 0;

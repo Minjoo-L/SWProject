@@ -22,6 +22,9 @@
 
 				<!-- Add custom CSS here -->
 				<link href="css/style.css" rel="stylesheet">
+				<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+				<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+				<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 				 <!-- bootstrap.min css -->
 		  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
 		  <!-- Ionic Icon Css -->
@@ -37,16 +40,70 @@
 		  <!-- Main Stylesheet -->
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" href="./css/swiper.min.css">
+
+				<!-- 추가한부분-->
+		    <link rel="stylesheet" href="style1.css">
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<title>오잉</title>
+			<style>
+		input[type="submit"]{
+		  background-color: #28B4B4;
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  border-radius:10px;
+		  width:260px;
+		  height:38px;
+		}
+
+		.box{
+			position:center;
+			top:0;left:0;bottom:0;right:0;
+			height:10%;
+			margin:15% auto;
+			text-align:center;
+		}
+		input[type="text"]{
+			border:none;
+			border-bottom:2px solid #0A9696;
+		}
+		input[type="password"]{
+			border:none;
+			border-bottom:2px solid #0A9696;
+		}
+		.btn1{
+		  background-color: white;
+		  border: none;
+		  color: black;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 20px;
+		  border-radius:10px;
+		  width:30px;
+		  height:38px;
+		}
+		.swiper-container {
+     	 	width: 90%;
+     	 	height: 100%;
+    	}
+	</style>
 	</head>
 		<body id ="body">
 		
 	<%
 		ResultSet rs=null;
  		request.setCharacterEncoding("utf-8");
- 		String user_id="", score ="", content="", time="";
+ 		String user_id = (String)session.getAttribute("user_id");
+ 		String sender="",content="", time="";
  		String sql = "";
- 		int posting_id = Integer.parseInt(request.getParameter("posting_id"));	//posting_id 값 넘겨 받기 
- 		String posting_title = request.getParameter("posting_title");			//posting_title 값 넘겨 받
+ 		
 	%>
 	  <%@ include file = "sidemenubar.jsp" %>
 	
@@ -55,8 +112,7 @@
 			  <div class="row">
 				<div class="col-md-12">
 				  <div class="block">
-					<h1>후기 삭제 </h1>
-					<p>관리자</p>
+					<h1>쪽지함  </h1>
 				  </div>
 				</div>
 			  </div>
@@ -66,18 +122,15 @@
 			 <div class="col-md-12">
 				 <div class="post post-single">	  
 				<div class="post-comments-form">
-					<h3 class="post-sub-heading" style="text-align: center;"><a href="place_details.jsp?id=<%=posting_id%>"><%=posting_title %></a></h3> 
+					<h3 class="post-sub-heading" style="text-align: center;"></h3> 
 					 <div class="row">
 					 <%
-					sql= "select * from review_test where posting_id="+posting_id;
+					 sql= "select * from message where receiver='"+ user_id+"'";
 					 rs =DB.getResult(sql);
 				 		while (rs.next()){
-				 			user_id = rs.getString("user_id");
-				 			score = rs.getString("score");
+				 			sender = rs.getString("sender");
 				 			content = rs.getString("content");
 				 			time = rs.getString("time");
-				 			posting_id = rs.getInt("posting_id");
-				 			posting_title = rs.getString("posting_title");
 				 			
 				 			String date = time.substring(0,10);
 							String tt = time.substring(11,19);
@@ -88,14 +141,9 @@
 									
 									<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
 										<div class=" from-group col-md-12" >
-											  	
-											<p>평점: <%=score%> </p><button type="submit" class="btn btn-main "style="float: right;">
-													  삭제 
-												 </button>
 											<p>내용: <%=content %> </p>
-											<h5>작성자:  &nbsp <%=user_id%> &nbsp[<%=date%> / <%=tt %>] </h5>
-											<input type = "hidden"name = "user_id" value="<%=user_id %>">
-											<input type="hidden" name = "time" value ="<%=time%>">
+											<h5>보낸 사람 :  &nbsp <%=sender%> &nbsp[<%=date%> / <%=tt %>] </h5>
+											
 											<hr width = "100%">
 											
 										</div>
@@ -108,12 +156,7 @@
 				</div>
 				</div>
 				</div>
- <!-- JavaScript -->
-        <script src="js/jquery-1.10.2.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-		<!-- Swiper JS -->
-  		<script src="./css/swiper.min.js"></script>
+
     </body>
 </html>
 				
