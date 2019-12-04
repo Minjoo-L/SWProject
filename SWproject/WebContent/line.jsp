@@ -22,16 +22,26 @@
 
     <body>
   		<%@ include file = "sidemenubar.jsp" %>
-  		
+  			<section class="page-title bg-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+					<h1 class="main-title">호선별 즐길거리</h1>
+                        <% if(request.getParameter("num")==null){ %>
+                        <p>전체 호선</p>
+                        <%}else{ %><p><%=request.getParameter("num") %>호선</p><%} %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
         <!-- Portfolio -->
         <div id="places" class="places">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 text-center">
-                        <h2 class="main-title">호선별 즐길거리</h2>
-                        <% if(request.getParameter("num")==null){ %>
-                        <p>전체 호선</p>
-                        <%}else{ %><p><%=request.getParameter("num") %>호선</p><%} %>
+                        
                         <hr>
                     </div>
                 </div>

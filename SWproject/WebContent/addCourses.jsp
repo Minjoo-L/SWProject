@@ -41,15 +41,22 @@ select::-ms-expand {
 <body>
   <%@ include file = "sidemenubar.jsp" %>
         <!-- Intro -->
+        	<section class="page-title bg-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+						<h1>코스 추가</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
         <div id="about">
             <div class="light-wrapper">
                 <div class="container inner">		
                     <div class="row">
-                        <div class="text-center">
-                            <h2 class="main-title">코스 추가</h2>
-                            <hr>
-                        </div>
-						
+
 <div class="page">
 		<%
 		String name="";

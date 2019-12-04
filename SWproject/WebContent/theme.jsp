@@ -24,16 +24,28 @@
     <body>
        <%@ include file = "sidemenubar.jsp" %>
         <!-- Portfolio -->
-        <div id="places" class="places">
-            <div class="container">
-				<%String[] theme_arr=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
+        <%String[] theme_arr=new String[]{"고궁","공연","랜드마크","박물관과 미술관","쇼핑","역사적 장소","오래가게","음식","자연"};
 				%>
-                <div class="row"> 
-                    <div class="col-md-4 col-md-offset-4 text-center">
-                        <h2 class="main-title">테마별 즐길거리</h2>
-                        <% if(request.getParameter("num")==null){ %>
+			<section class="page-title bg-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+					 <h1 class="main-title">테마별 즐길거리</h1>
+<% if(request.getParameter("num")==null){ %>
                         <p>전체 테마</p>
                         <%}else{ %><p><%=theme_arr[Integer.parseInt(request.getParameter("num"))] %></p><%} %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+        <div id="places" class="places">
+            <div class="container">
+
+                <div class="row"> 
+                    <div class="col-md-4 col-md-offset-4 text-center">
+                        
                         <hr>
                     </div>
                 </div>
