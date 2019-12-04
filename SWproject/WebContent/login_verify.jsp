@@ -37,14 +37,13 @@
 		{
 			session.setAttribute("user_id",u_id);  
 			session.setAttribute("user_pwd",u_pwd); 
-			if(u_id.equals("admin") && u_pwd.equals("admin"))
-				response.sendRedirect("main.jsp");
+			response.sendRedirect("main.jsp");
 		}
 		else
 		{
 			response.sendRedirect("main.jsp");
 			out.println("<script>");
-			out.println("alert('ID¿Í ºñ¹Ð¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä ')");
+			out.println("alert('IDï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ ')");
 			out.println("</script>");
 		}
 		
