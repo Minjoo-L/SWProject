@@ -25,12 +25,16 @@
         
         <%@ include file = "sidemenubar.jsp" %>
         <%
-        String login_user = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
 		ResultSet rs =null;
     	ResultSet m = null;
 		int i = 0;
 	 	String c_name ="", c_theme ="", firplace_name ="", secplace_name="",thrplace_name="", forplace_name="";
 	 	String id = "";
+        String login_user;
+        // 현재 로그인한 사용자 아이디 가져오기 
+        if ((login_user = (String)session.getAttribute("user_id")) == null) {
+            login_user = "";
+        }
 	 	request.setCharacterEncoding("utf-8");
 	 	//where조건을 이제는 게시글 제목으로 찾는걸로 바꾸기 
          id = request.getParameter("id");
