@@ -104,7 +104,8 @@
                         }
                     %>
 					<div class="post post-single">
-						<h2><%=item[i][0]%></h2>
+                    <%-- details?id=__ --%>
+						<h2><a href = "details.jsp?id=<%=x%>"><%=item[i][0]%></a></h2>
 						
 						<div class="post-thumb">   <%-- img --%>
 							<img class="img-responsive" src="<%=item[i][10] %>" alt="" style="width:500px; height:auto;">
@@ -173,6 +174,7 @@
                                     <p>
                                         내용:
                                         <%=content%>
+                                        <%System.out.println(content); %> %>
                                     </p>
                                     <h5>
                                         작성자: &nbsp
