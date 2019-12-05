@@ -22,23 +22,21 @@
 <body>
     <%@ include file = "sidemenubar.jsp" %>
         <!-- Intro -->
+        <section class="page-title bg-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+					 <h1 class="main-title">회원가입</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
         <div id="about">
             <div class="light-wrapper">
-                <div class="container inner">
-					<br><br>
-					<table width="100%">
-						<tr>
-							<td><p algn="left"><a href="main.jsp"><button type="button" class="btn1">before</button></a></p></td>
-							
-						</tr>
-					</table>
-					
-					
-                    <div class="row">
-                        <div class="text-center">
-                            <h2 class="main-title">Join</h2>
-							<hr>
-                        </div>		
+                <div class="container inner">				
+                    <div class="row">	
 	<div class="box">	
      <form action="join.jsp" method="post">
        
@@ -50,6 +48,7 @@
     </form>
    <%
    					//form으로부터 값 받아오기
+					request.setCharacterEncoding("utf-8");
 					String user_id=request.getParameter("user_id");
 					String user_pwd=request.getParameter("user_pwd");
 					String user_nickname=request.getParameter("user_nickname");

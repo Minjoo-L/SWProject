@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%
+	request.setCharacterEncoding("utf-8");
 	String user_id = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
 	String kind = request.getParameter("kind");
 	if(user_id == null){
@@ -27,7 +28,6 @@
     PreparedStatement pstmt = null;
 	//JavaBeans Review = new JavaBeans();
 	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw","swProject","swproject_moon");
-	request.setCharacterEncoding("UTF-8");
 	String content = request.getParameter("review");			//리뷰 내용
 	String score = request.getParameter("sortMtd");
 	String posting_title = request.getParameter("c_name");

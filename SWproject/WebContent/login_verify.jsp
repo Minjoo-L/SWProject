@@ -1,17 +1,16 @@
 <%@ page import="java.sql.*"%>
 <jsp:useBean id="DB" class="beans.JavaBeans" scope="page"/>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <title></title>
 </head>
 <body>
 <%
-      
       	String u_id=request.getParameter("user_id");
 		String u_pwd=request.getParameter("user_pwd");
 		
@@ -41,10 +40,8 @@
 		}
 		else
 		{
-			response.sendRedirect("main.jsp");
-			out.println("<script>");
-			out.println("alert('ID�� ��й�ȣ�� Ȯ�����ּ��� ')");
-			out.println("</script>");
+			out.println("<script>alert('ID와 비밀번호를 확인해주세요');");
+			out.println("location.href='main.jsp';</script>");
 		}
 		
 		
