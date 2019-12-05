@@ -11,7 +11,7 @@
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
 	String kind = request.getParameter("kind");
 	if(user_id == null){
@@ -27,7 +27,7 @@
 	ResultSet rs=null;
     PreparedStatement pstmt = null;
 	//JavaBeans Review = new JavaBeans();
-	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw","swProject","swproject_moon");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw?useUnicode=true&characterEncoding=UTF-8","swProject","swproject_moon");
 	String content = request.getParameter("review");			//리뷰 내용
 	String score = request.getParameter("sortMtd");
 	String posting_title = request.getParameter("c_name");
@@ -65,7 +65,7 @@
 	else{
 	//후기 처음 작성하는 사람만 등록 
 	//String sql = "insert into review_test (user_id,score,content,time,posting_id,posting_title) select ?,?,?,?,?,? from dual where not exists (select user_id from review_test where user_id=?)";
-	String sql = "insert into review_test values (?,?,?,?,?,?,?)";
+	String sql = "insert into review_test (user_id,score,content,time,posting_id,posting_title, kind) values (?,?,?,?,?,?,?)";
 	try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user_id);

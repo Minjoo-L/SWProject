@@ -19,10 +19,10 @@
 	Timestamp time = new Timestamp(System.currentTimeMillis());
 	ResultSet rs=null;
     PreparedStatement pstmt = null;
-	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw","swProject","swproject_moon");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw?useUnicode=true&characterEncoding=UTF-8","swProject","swproject_moon");
 	System.out.println(referer);
 	
-	String SQL = "insert into message values (?,?,?,?)"; // 받는 사람, 보내는 사람, 쪽지내용, 시간 
+	String SQL = "insert into message (receiver, sender, content, time) values (?,?,?,?)"; // 받는 사람, 보내는 사람, 쪽지내용, 시간 
 	pstmt = conn.prepareStatement(SQL);
 	pstmt.setString(1, receiver);
 	pstmt.setString(2, sender);
