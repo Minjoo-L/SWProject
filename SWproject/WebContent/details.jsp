@@ -129,7 +129,6 @@
 											평점: &nbsp
 											<%= score %></p>
 										<p>
-											내용:
 											<%=content%>
 										</p>
 										<h5>

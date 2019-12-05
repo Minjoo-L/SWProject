@@ -25,11 +25,12 @@
 	<%@ include file="sidemenubar.jsp"%>
 
 	<%
+	request.setCharacterEncoding("utf-8");
 			String login_user = (String)session.getAttribute("user_id");  // 현재 로그인한 사용자 아이디 가져오기 
 			//로그인 안 해도 글 볼 수 있게 처리 
 			if ( login_user == null) login_user = "";
 			ResultSet rs=null;
-			 request.setCharacterEncoding("utf-8");
+			 
 			 String user_id ="", score="", content="", time="";
 			 String name="", phone_number="", address="", station="",contents="", s_date="", e_date="", website="",host="",fee="", line="", img="";
 			 int id = Integer.parseInt(request.getParameter("id"));
@@ -129,7 +130,6 @@
 											평점: &nbsp
 											<%= score %></p>
 										<p>
-											내용:
 											<%=content%>
 										</p>
 										<h5>
@@ -150,7 +150,6 @@
 											평점: &nbsp
 											<%= score %></p>
 										<p>
-											내용:
 											<%=content%>
 										</p>
 										
