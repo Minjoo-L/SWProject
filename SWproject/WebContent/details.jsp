@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>자세한 내용입니다</title>
+<title>Enjoy SEOUL</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -119,7 +119,6 @@
 									<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
 
 										<%
-											System.out.println(user_id);
 											//이 부분에서 오류 난다면 다시 로그인 한 후 실행
 											if(login_user.equals(user_id) && login_user != ""){
 										%>

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>데이터베이스에 리뷰 삭제  </title>
+<title>Enjoy SEOUL</title>
 </head>
 <body>
 <%

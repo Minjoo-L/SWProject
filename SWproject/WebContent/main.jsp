@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Festival Metro</title>
+        <title>Enjoy SEOUL</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
@@ -26,7 +26,7 @@
         <div id="top" class="header">
             <div class="vert-text parallax">
 			
-                <h1><span>F</span><span>e</span><span>s</span><span>t</span><span>i</span><span>v</span><span>a</span><span>l</span><span>&nbsp;</span><span>M</span><span>e</span><span>t</span><span>r</span><span>o</span></h1>
+                <h1><span>E</span><span>n</span><span>j</span><span>o</span><span>y</span><span>&nbsp;</span><span>S</span><span>E</span><span>O</span><span>U</span><span>L</span></h1>
                 <br />
 				<!--추가시작-->
 				

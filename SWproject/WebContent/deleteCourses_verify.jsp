@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Festival Metro</title>
+<title>Enjoy SEOUL</title>
 </head>
 <body>
 <%
@@ -15,7 +15,6 @@
 		ResultSet rs=null;
 	    request.setCharacterEncoding("UTF-8");
 		String c_name = request.getParameter("c_name");
-		System.out.println(c_name);
 		// 사용자 아이디와 게시글 번호로 삭제 
 		String sql1 = "select count(*) from courses";
 		try{
@@ -34,7 +33,6 @@
 					rs=DB.getResult(sql2);
 					while(rs.next()){
 						id=rs.getString(1);
-						System.out.println("ID : "+id);
 					}
 					String sql3 = "delete from courses where c_name='"+c_name+"'";
 					try {

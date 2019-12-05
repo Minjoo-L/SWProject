@@ -12,7 +12,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Festival Metro</title>
+        <title>Enjoy SEOUL</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
@@ -81,7 +81,6 @@
                  	rs=DB.getResult(sql2);
          	 		while (rs.next()){
 				 		c_name = rs.getString(1);
-				 		System.out.println(c_name);
 				 		String imgUrl=rs.getString(3);
 				 		id = rs.getInt(2);
 				 		firplace_name=rs.getString(4);

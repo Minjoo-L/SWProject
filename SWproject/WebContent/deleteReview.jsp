@@ -14,7 +14,7 @@
 			<meta name="description" content="">
 			<meta name="author" content="">
 
-				<title>후기 삭제 </title>
+				<title>Enjoy SEOUL</title>
 
 				<!-- Bootstrap core CSS -->
 				<link href="css/bootstrap.css" rel="stylesheet">

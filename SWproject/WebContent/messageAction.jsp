@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>데이터베이스에 쪽지 저장</title>
+<title>Enjoy SEOUL</title>
 </head>
 <body>
 	<%
@@ -20,7 +20,6 @@
 	ResultSet rs=null;
     PreparedStatement pstmt = null;
 	Connection conn = DriverManager.getConnection("jdbc:mysql://13.115.203.27:3306/sw?useUnicode=true&characterEncoding=UTF-8","swProject","swproject_moon");
-	System.out.println(referer);
 	
 	String SQL = "insert into message (receiver, sender, content, time) values (?,?,?,?)"; // 받는 사람, 보내는 사람, 쪽지내용, 시간 
 	pstmt = conn.prepareStatement(SQL);

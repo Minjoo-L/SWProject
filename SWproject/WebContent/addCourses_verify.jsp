@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>Enjoy SEOUL</title>
 </head>
 <body>
 <%
@@ -31,10 +31,6 @@
 			String test_fp2=rs.getString(4);
 			String test_fp3=rs.getString(5);
 			String test_fp4=rs.getString(6);
-			System.out.println("DB : "+test_fp1+"() , WEB : "+fp1+"()");
-			System.out.println("DB : "+test_fp2+"() , WEB : "+fp2+"()");
-			System.out.println("DB : "+test_fp3+"() , WEB : "+fp3+"()");
-			System.out.println("DB : "+test_fp4+"() , WEB : "+fp4+"()");
 			if(test_fp1.equals(fp1) && test_fp2.equals(fp2) && test_fp3.equals(fp3) && test_fp4.equals(fp4))
 			{
 				isExist=true;

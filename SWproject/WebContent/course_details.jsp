@@ -11,7 +11,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Festival Metro</title>
+        <title>Enjoy SEOUL</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
@@ -174,7 +174,6 @@
                                     <p>
                                         내용:
                                         <%=content%>
-                                        <%System.out.println(content); %> %>
                                     </p>
                                     <h5>
                                         작성자: &nbsp

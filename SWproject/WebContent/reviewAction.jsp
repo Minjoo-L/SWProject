@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>데이터베이스에 리뷰 등록</title>
+<title>Enjoy SEOUL</title>
 </head>
 <body>
 	<%
@@ -32,11 +32,8 @@
 	String score = request.getParameter("sortMtd");
 	String posting_title = request.getParameter("c_name");
 	int id = Integer.parseInt(request.getParameter("id"));
-	System.out.println("id는"+id);
-	System.out.println("user id는"+user_id);
 	Timestamp time = new Timestamp(System.currentTimeMillis());
 	String referer = request.getHeader("referer");
-	System.out.println(referer);
 	if (content == ""){
 		%>
 		<script>
@@ -54,7 +51,6 @@
 	pstmt.setString(2, posting_title);
 	rs = pstmt.executeQuery();
 	if(rs.isBeforeFirst()){
-		System.out.println("조회된데이터 있음  ");
 		%>
 	<script>
 	alert('이미 후기를 작성한 글입니다.'); 

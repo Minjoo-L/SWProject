@@ -28,7 +28,7 @@
     %>
         <!-- Side Menu -->
          <ul class="menubar">
-     		 <li class="h"><a class="h" href="main.jsp"><b>FestivalMetro</b></a></li>
+     		 <li class="h"><a class="h" href="main.jsp"><b>EnjoySEOUL</b></a></li>
       		<li class="h"><a class="h" href="line.jsp">호선별 즐길거리</a></li>
       		 <li class="h"><a class="h" href="theme.jsp">테마별 즐길거리</a></li>
       		 <li class="h"><a class="h" href="festival.jsp">서울시 축제정보</a></li>
