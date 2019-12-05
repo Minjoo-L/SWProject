@@ -73,7 +73,7 @@
 						endPage=allPage;
 					}
 	
-					sql="select f.name, f.station, s.line, f.id, s_date, e_date from festival f, station2 s, subwayLine l where f.station=s.name and s.line=l.line_num and (id>= "+start+" and id <= "+end+") order by f.name";
+					sql="select f.name, f.station, s.line, f.id, f.img, s_date, e_date from festival f, station2 s, subwayLine l where f.station=s.name and s.line=l.line_num and (id>= "+start+" and id <= "+end+") order by f.name";
 					rs=DB.getResult(sql);
 					if(rs==null){
 						out.println("DB연동 오류");
@@ -82,7 +82,7 @@
 						while(rs.next()){
 							name=rs.getString("name");
 							station=rs.getString("station");
-							//img=rs.getString("img");
+							img=rs.getString("img");
 							line=rs.getString("line");
 							String s_date=rs.getString("s_date");
 							String e_date=rs.getString("e_date");
@@ -93,7 +93,7 @@
 		                        <div class="grid center-block">
 		                        	<a href="festival_details.jsp?id=<%=id %>">
 		                            <figure class="effect-zoe">
-		                                <img src="./img/a.png " class="img-responsive center-block" style="width:800px;height:400px;">
+		                                <img src="<%=img %>" class="img-responsive center-block" style="width:800px;height:400px;">
 		                                <figcaption>
 		                                    <h2><%=name %></h2>
 		                                    <p class="description">축제기간 : <%=s_date %>~<%=e_date %></p>

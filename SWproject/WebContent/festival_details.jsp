@@ -71,7 +71,7 @@
 				<div class="col-md-12">
 					<div class="post post-single">
 						<div class="post-thumb">
-							<img class="img-responsive" src="./img/a.png" alt="" align="center" width="1000" height=auto>
+							<img class="img-responsive" src="<%=img %>" alt="" align="center" width="1000" height=auto>
 						</div>
 						<div class="post-content post-excerpt">
 							<blockquote class="quote-post">
