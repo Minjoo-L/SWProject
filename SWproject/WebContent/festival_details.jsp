@@ -51,6 +51,7 @@
 					 host = rs.getString("host");
 					 img = rs.getString("img");
 					 line = rs.getString("line");
+					 id=Integer.parseInt(rs.getString("id"));
 					 } 
 		%>
 	<section class="page-title bg-2">

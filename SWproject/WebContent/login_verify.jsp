@@ -41,7 +41,7 @@
 		else
 		{
 			out.println("<script>alert('ID와 비밀번호를 확인해주세요');");
-			out.println("location.href='main.jsp';</script>");
+			out.println("location.href='login.jsp';</script>");
 		}
 		
 		

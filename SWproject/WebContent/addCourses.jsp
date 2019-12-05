@@ -79,7 +79,7 @@ select::-ms-expand {
 			
 			<br>
 			<label class="field a-field a-field_a1">
-			<span class="a-field__label">추가하고싶은 코스이름</span><br>
+			<h2 class="a-field__label">추가하고싶은 코스이름</h2><br>
 		  <input class="field__input a-field__input" type="text" name="course_name" placeholder="e.g. 경복궁주변맛집탐방" required>
 		  <span class="a-field__label-wrap">
 		  <br>
@@ -88,7 +88,7 @@ select::-ms-expand {
 			</label>
 			<hr width="50%">
 			<label class="field a-field a-field_a1">
-			<span class="a-field__label">코스 테마</span><br>
+			<h2 class="a-field__label">코스 테마</h2><br>
 		  <input class="field__input a-field__input" type="text" name="course_theme" placeholder="e.g. 힐링" required>
 		  <span class="a-field__label-wrap">
 		  </span>

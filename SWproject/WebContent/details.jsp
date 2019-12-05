@@ -154,8 +154,7 @@
 											<%=content%>
 										</p>
 										
-										<h5>작성자: &nbsp<%=user_id %> <button type="submit" 
-											>쪽지 보내기 </button></h5>
+										<h5>작성자: &nbsp<%=user_id %> <button type="submit">쪽지 보내기 </button></h5>
 										<h5>
 											&nbsp[<%=date%>
 											/

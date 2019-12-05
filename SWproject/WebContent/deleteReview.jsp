@@ -42,7 +42,7 @@
 	<%
 		ResultSet rs=null;
  		request.setCharacterEncoding("utf-8");
- 		String posting_title="";
+ 		String posting_title="", kind="";
  		int posting_id = 0;
  		String sql = "";
  		
@@ -69,11 +69,13 @@
 					<h3 class="post-sub-heading" style ="text-align: center;">게시글 목록 </h3> 
 					 <div class="row">
 					 <%
-					sql= "select distinct posting_id, posting_title from review_test";
+					sql= "select distinct posting_id, posting_title, kind from review_test";
 					 rs =DB.getResult(sql);
 				 		while (rs.next()){
 				 			posting_id = rs.getInt("posting_id");
 				 			posting_title = rs.getString("posting_title");
+				 			kind=rs.getString("kind");
+				 			
 					 %>
 						<!-- 	 for (let data of results){ -->
 						<div class="from-group col-md-12">
@@ -81,9 +83,14 @@
 								<form method="post" action="showReviewAction.jsp" id="form" role="form">
 									<input type="hidden" name = "posting_id" value="<%=posting_id %>">
 									<input type = "hidden" name = "posting_title" value = "<%= posting_title %>">
-									<button type="submit" class="btn btn-main "style="float: right;">리뷰 조회  </button>
-										
-										<p> <a href="place_details.jsp?id=<%=posting_id%>"><%=posting_title%></a></p>
+									<button type="submit" class="btn btn-main "style="float: right;">후기 조회  </button>
+									<% if(kind.equals("attraction")){ %>	
+										<p> <a href="details.jsp?id=<%=posting_id%>"><%=posting_title%></a></p>
+									<%}else if(kind.equals("courses")){ %>
+									<p> <a href="course_details.jsp?id=<%=posting_id%>"><%=posting_title%></a></p>
+									<%}else if(kind.equals("festival")){ %>
+									<p> <a href="festival_details.jsp?id=<%=posting_id%>"><%=posting_title%></a></p>
+									<%} %>
 									<hr width = "100%">
 								</form>
 								</div>
