@@ -81,9 +81,9 @@
 								<form method="post" action="showReviewAction.jsp" id="form" role="form">
 									<input type="hidden" name = "posting_id" value="<%=posting_id %>">
 									<input type = "hidden" name = "posting_title" value = "<%= posting_title %>">
-									<button type="submit" class="btn btn-main "style="float: right;">리뷰 조회  </button>
+									<button type="submit" class="btn btn-main "style="float: right;">후기 조회  </button>
 										
-										<p> <a href="place_details.jsp?id=<%=posting_id%>"><%=posting_title%></a></p>
+										<p> <a href="details.jsp?id=<%=posting_id%>"><%=posting_title%></a></p>
 									<hr width = "100%">
 								</form>
 								</div>
