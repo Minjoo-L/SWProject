@@ -15,7 +15,7 @@
 			<meta name="description" content="">
 			<meta name="author" content="">
 
-				<title>Enjoy SEOUL</title>
+				<title>쪽지함</title>
 
 				<!-- Bootstrap core CSS -->
 				<link href="css/bootstrap.css" rel="stylesheet">
@@ -100,6 +100,7 @@
 	<%
 		ResultSet rs=null;
  		request.setCharacterEncoding("utf-8");
+ 		//String login_user = (String)session.getAttribute("user_id");
  		String user_id = (String)session.getAttribute("user_id");
  		String sender="",content="", time="";
  		String sql = "";
@@ -139,11 +140,14 @@
 								<div class="col-md-6 form-group">
 									<!-- Name -->
 									
-									<form method="post" action="reviewDeleteAction.jsp" id="form" role="form">
+									<form method="post" action="message.jsp" id="form" role="form">
 										<div class=" from-group col-md-12" >
-											<p>내용: <%=content %> </p>
+											<p>내용: <%=content %> <button type="submit" style="float: right;">
+													  답장하기  
+												 </button></p>
 											<h5>보낸 사람 :  &nbsp <%=sender%> &nbsp[<%=date%> / <%=tt %>] </h5>
 											
+											<input type = "hidden" name = "user_id" value="<%= sender%>"/>
 											<hr width = "100%">
 											
 										</div>
