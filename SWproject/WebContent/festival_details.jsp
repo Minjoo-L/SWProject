@@ -81,10 +81,10 @@
 							<hr>
 							<br>
 							<p> 축제기간 : <%=s_date %>~<%=e_date %></p>
-							<p>주소 : <%=address%></p>
+							<p>주소 :<%=address %></p>
 							<p>교통  : <%=line %>호선  <%=station%>역 </p>
 							<% if(fee!=null&&!fee.equals("없음")){%><p>요금  : <%=fee%></p><%} %>
-							<% if(website!=null){%><p>홈페이지 : <%=website%></p><%} %>
+							<% if(website!=null){%><p>홈페이지 : <a href="<%=website%>"><%=website%></p></a><%} %>
 							<p>전화번호 : <%=phone_number %></p>
 							<% if(host!=null&&!host.equals("없음")){%><p>주최  : <%=host%></p><%} %>
 						</div>
